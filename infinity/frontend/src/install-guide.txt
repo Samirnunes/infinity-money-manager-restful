@@ -1,0 +1,7 @@
+1. npx create-react-app frontend-install 
+(use isso apenas para instalar as dependências, depois pode deletar a pasta
+frontend-install)
+
+2. npm install react-router-dom
+
+3. npm start
