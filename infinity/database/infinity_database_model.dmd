@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="infinity_database_model" id="412D661B-5896-D9F1-2BA4-04CE15AC5C66" version="3.5">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:13:26 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>412D661B-5896-D9F1-2BA4-04CE15AC5C66</designId>
+</OSDM_Design>

@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="88F33016-EA7C-F7F9-7642-FBE74FEB8BC5" name="metas">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>C1AE46A6-C5DF-9302-DDAF-EB3BEE07C3C1</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="DCCCB6FB-3091-507E-BF87-303EA31BBE79">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>51D7506A-8193-91A7-727F-414CC60B6E75</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="20172F6E-D41C-A05E-F40F-AB8B6E2CD464">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>864CA137-55FA-67AC-24EC-90A461773266</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor_alvo" id="0C32C868-9C02-68AA-C877-C6837B2D4518">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>F3A05D05-CAD5-2E54-2B4C-1A7EDE82AB28</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<constraintName>valor_inicial</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,19,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor_arrecadado" id="6826C67D-0F17-7A75-F079-68DCC0476200">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>FF7CA8EF-A1B2-9B01-E18E-1CB78D6F0184</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<constraintName>valor_inicial</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,19,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prazo" id="5BD6D487-251B-298F-3048-8E5382BCDEA0">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>EA7E62DA-615B-FBD7-AD42-0C4E1ECD2FC7</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="298BF21D-6AB6-D1A8-F13A-168B647B69C7" name="metas_PK">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>0588698C-DC7A-3883-2606-98E398189C47</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCCCB6FB-3091-507E-BF87-303EA31BBE79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

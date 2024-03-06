@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1152D09F-A280-56C1-4275-53B1B86FAEFD" containerWithKeyObject="094DE2B3-E595-DB3A-D741-D184C2131279" localFKIndex="D0E851B8-8C51-978A-8807-C21134438D63" name="gastos_metas_FK">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>8A1CE816-A977-505F-F673-6BA3BEBEBDE9</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<referredTableLongName>metas</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>88F33016-EA7C-F7F9-7642-FBE74FEB8BC5</referredTableID>
+<keyObject>298BF21D-6AB6-D1A8-F13A-168B647B69C7</keyObject>
+<referredKeyID>298BF21D-6AB6-D1A8-F13A-168B647B69C7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

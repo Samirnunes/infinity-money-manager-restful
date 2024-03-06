@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3A80555D-E3F6-9F06-EEC5-2C66B1EADFAF" name="gastos_variaveis">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:08 UTC</createdTime>
+<generatorID>0DEF928F-6B49-5273-50F1-A71ED86D1DDE</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="486B13EF-BDD5-AC11-A24B-95C3CBCB83AC">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:08 UTC</createdTime>
+<generatorID>68260EF3-0D8E-0102-7BF6-E25CBEA9A720</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="metas_id" id="D06A49EC-ACEA-1693-BB8E-57DB2F37ABDE">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:08 UTC</createdTime>
+<generatorID>20C7947C-284B-4DC1-0098-271B99107CC4</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E5E3FE6-EEE3-0C4B-97B3-E055189A76E6" referredColumn="DCCCB6FB-3091-507E-BF87-303EA31BBE79"/>
+</associations>
+</Column>
+<Column name="tipo" id="6CC7D747-8006-426C-5814-84504F4DDC1A">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>1FC80AD7-3705-13D6-7A5E-7914CD2497C6</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="fixo" description=""/>
+<valueDef value="variavel" description=""/>
+</listOfValues>
+<defaultValue>variavel</defaultValue>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor" id="5297EDB4-D623-1B35-1947-2D8AAA6EAAD2">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>7B4A5B3B-CEBB-9F48-92C0-2D1C3AC2A82F</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,19,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="categoria" id="C4FB889C-57E9-BDB2-7021-91E4A9D73B88">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>5AF25ED5-392C-36FA-A4E3-EBCE03343725</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao" id="F6447EE5-00E4-0F9A-55D4-CD0F9CCDA73C">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>673C6443-4247-5E94-7D4D-A52B64ED658A</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data" id="696368B8-FC3B-D9E1-2629-D017FEA84C02">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>7FA491C4-38DE-EDA5-F8DD-986087853F9E</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F7EA3568-5D51-8CD3-9F3C-287E16EBDD27" name="gastos_variaveis_PK">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:08 UTC</createdTime>
+<generatorID>14BE5725-F68D-D48F-6AA3-38238DC7D4CE</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="486B13EF-BDD5-AC11-A24B-95C3CBCB83AC"/>
+<colUsage columnID="D06A49EC-ACEA-1693-BB8E-57DB2F37ABDE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B949FBC3-EA00-8028-1579-00EF96EDD30F" name="gastos_variaveis_metas_FK">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>8A1CE816-A977-505F-F673-6BA3BEBEBDE9</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D06A49EC-ACEA-1693-BB8E-57DB2F37ABDE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

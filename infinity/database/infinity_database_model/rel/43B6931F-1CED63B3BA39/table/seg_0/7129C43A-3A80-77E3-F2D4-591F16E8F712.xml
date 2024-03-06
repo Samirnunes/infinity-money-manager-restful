@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7129C43A-3A80-77E3-F2D4-591F16E8F712" name="ganhos">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>9E3EF4BE-EC88-AF16-CC99-02FDA6357DE3</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="CAA68CC2-E9DB-E4FB-1B00-7830423B2230">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>DBA1C78F-9921-90C7-A20F-B44F0476FCE6</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="9D53CFF5-B67A-E4ED-39C6-6B2D2B0A89C5">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>95CF7C07-DADC-9DBB-22BE-35DA4EA3577C</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<constraintName>tipos_permitidos</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="fixo" description=""/>
+<valueDef value="variavel" description=""/>
+</listOfValues>
+<defaultValue>variavel</defaultValue>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor" id="CBAF38BD-BFD1-378C-2A9A-24B5D1FFB9AB">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>1922ED68-96BB-E793-24E6-18E515177206</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<constraintName>valor_inicial</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,19,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fonte" id="E22B515C-F2A0-5EBA-1F72-7F0D0BFC3445">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>D093C9FF-BA08-ABFA-6B52-B9A7CAAA501E</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao" id="489D72EB-0138-73D5-D1AD-4A648F6A081B">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>946A1D85-1027-2537-6E0B-592249090B6A</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data" id="5138F711-DC64-31BD-5FB5-7B0D58D4D50A">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>23F8E766-77C6-CD25-E235-3DA76A51609A</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="periodicidade" id="3AF14C42-060F-0E36-A4DA-466D6437BC34">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>C2EADA20-8E43-DD27-B044-AEB5B8A98027</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<constraintName>periodicidades_permitidas</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="anual" description=""/>
+<valueDef value="bimestral" description=""/>
+<valueDef value="diaria" description=""/>
+<valueDef value="mensal" description=""/>
+<valueDef value="quinzenal" description=""/>
+<valueDef value="semanal" description=""/>
+<valueDef value="semestral" description=""/>
+<valueDef value="trimestral" description=""/>
+</listOfValues>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="619E2817-0B9E-C31A-FB3D-3CE10CEB932A" name="ganhos_PK">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:23:03 UTC</createdTime>
+<generatorID>76F1B402-40BB-7670-7F62-BA8C6AFFB13A</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CAA68CC2-E9DB-E4FB-1B00-7830423B2230"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

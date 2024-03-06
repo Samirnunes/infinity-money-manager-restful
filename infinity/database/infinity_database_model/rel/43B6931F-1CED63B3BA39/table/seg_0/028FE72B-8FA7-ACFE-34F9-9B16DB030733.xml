@@ -1,0 +1,154 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="028FE72B-8FA7-ACFE-34F9-9B16DB030733" name="gastos_fixos">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:08 UTC</createdTime>
+<generatorID>E4B1CCDD-4EEF-F932-006B-306C911290DD</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="C22CE726-1DA5-2A9B-FB26-17077AA20F6F">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:08 UTC</createdTime>
+<generatorID>68260EF3-0D8E-0102-7BF6-E25CBEA9A720</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="periodicidade" id="441DFFAC-BF1D-71CA-058E-C0011F079BE7">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:08 UTC</createdTime>
+<generatorID>2071711D-81FE-446B-348A-5AFE452B55AF</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<constraintName>valores_permitidos</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="anual" description=""/>
+<valueDef value="bimestral" description=""/>
+<valueDef value="diaria" description=""/>
+<valueDef value="mensal" description=""/>
+<valueDef value="quinzenal" description=""/>
+<valueDef value="semanal" description=""/>
+<valueDef value="semestral" description=""/>
+<valueDef value="trimestral" description=""/>
+</listOfValues>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="metas_id" id="BD4762BF-A62B-D7EE-4B22-8977BAFD6AAA">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:08 UTC</createdTime>
+<generatorID>20C7947C-284B-4DC1-0098-271B99107CC4</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DCAC5909-8155-7B5F-6753-41775E61592C" referredColumn="DCCCB6FB-3091-507E-BF87-303EA31BBE79"/>
+</associations>
+</Column>
+<Column name="tipo" id="F178D715-C97A-0616-C14E-0FDEA54CA17C">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>1FC80AD7-3705-13D6-7A5E-7914CD2497C6</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="fixo" description=""/>
+<valueDef value="variavel" description=""/>
+</listOfValues>
+<defaultValue>variavel</defaultValue>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor" id="D26FC131-28B5-1E35-F594-76BBEA66006F">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>7B4A5B3B-CEBB-9F48-92C0-2D1C3AC2A82F</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,19,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="categoria" id="CD836BB7-ECE7-6D07-D9F0-351E5ECEFE28">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>5AF25ED5-392C-36FA-A4E3-EBCE03343725</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao" id="49C2EED4-4ABA-A888-5206-B4AC1D5FD7B1">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>673C6443-4247-5E94-7D4D-A52B64ED658A</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data" id="6E1CB1F0-C481-3B1A-1F0E-5BB5F76F7B5D">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>7FA491C4-38DE-EDA5-F8DD-986087853F9E</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ADC06A97-EA17-87D8-5790-79041F7B7310" name="gastos_fixos_PK">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:08 UTC</createdTime>
+<generatorID>14BE5725-F68D-D48F-6AA3-38238DC7D4CE</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C22CE726-1DA5-2A9B-FB26-17077AA20F6F"/>
+<colUsage columnID="BD4762BF-A62B-D7EE-4B22-8977BAFD6AAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2DB2E3D3-B48D-F749-8C9F-DA600DEEFE9C" name="gastos_fixos_metas_FK">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 19:02:38 UTC</createdTime>
+<generatorID>8A1CE816-A977-505F-F673-6BA3BEBEBDE9</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD4762BF-A62B-D7EE-4B22-8977BAFD6AAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

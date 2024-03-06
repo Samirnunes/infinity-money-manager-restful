@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="B08ACC1A-4CE3-EA64-32C9-FFB317141AA2" mainViewID="20F5995E-B15F-DB32-FCC5-86D661F516C6">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:13:26 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

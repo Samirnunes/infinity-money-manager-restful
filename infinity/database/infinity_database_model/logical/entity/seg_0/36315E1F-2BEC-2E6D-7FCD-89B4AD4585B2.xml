@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="36315E1F-2BEC-2E6D-7FCD-89B4AD4585B2" name="gastos">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:25 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="false"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributeInherType>All atributes</attributeInherType>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="68260EF3-0D8E-0102-7BF6-E25CBEA9A720">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:25 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo" id="1FC80AD7-3705-13D6-7A5E-7914CD2497C6">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:25 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="fixo" description=""/>
+<valueDef value="variavel" description=""/>
+</listOfValues>
+<defaultValue>variavel</defaultValue>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor" id="7B4A5B3B-CEBB-9F48-92C0-2D1C3AC2A82F">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:25 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,19,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="categoria" id="5AF25ED5-392C-36FA-A4E3-EBCE03343725">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:25 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descricao" id="673C6443-4247-5E94-7D4D-A52B64ED658A">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:25 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data" id="7FA491C4-38DE-EDA5-F8DD-986087853F9E">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:25 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="20C7947C-284B-4DC1-0098-271B99107CC4">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:22:41 UTC</createdTime>
+<generatorID>8A1CE816-A977-505F-F673-6BA3BEBEBDE9</generatorID>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<referedAttribute>51D7506A-8193-91A7-727F-414CC60B6E75</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="14BE5725-F68D-D48F-6AA3-38238DC7D4CE" name="ganhos PK">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:25 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>68260EF3-0D8E-0102-7BF6-E25CBEA9A720</attributeRef>
+<attributeRef>20C7947C-284B-4DC1-0098-271B99107CC4</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

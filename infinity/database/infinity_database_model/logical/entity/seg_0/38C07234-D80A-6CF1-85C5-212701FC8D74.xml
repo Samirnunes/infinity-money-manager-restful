@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="38C07234-D80A-6CF1-85C5-212701FC8D74" name="ganhos_fixos">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 18:56:07 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>9E3EF4BE-EC88-AF16-CC99-02FDA6357DE3</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributeInherType>All atributes</attributeInherType>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="periodicidade" id="C2AB8F06-5D39-38EA-D2EE-D254BD7029F2">
+<createdBy>gabri</createdBy>
+<createdTime>2023-09-20 18:57:54 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<constraintName>valores_permitidos</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="anual" description=""/>
+<valueDef value="bimestral" description=""/>
+<valueDef value="diaria" description=""/>
+<valueDef value="mensal" description=""/>
+<valueDef value="quinzenal" description=""/>
+<valueDef value="semanal" description=""/>
+<valueDef value="semestral" description=""/>
+<valueDef value="trimestral" description=""/>
+</listOfValues>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

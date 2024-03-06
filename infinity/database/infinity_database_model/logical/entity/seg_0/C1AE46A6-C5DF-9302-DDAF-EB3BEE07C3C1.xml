@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C1AE46A6-C5DF-9302-DDAF-EB3BEE07C3C1" name="metas">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:47 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="51D7506A-8193-91A7-727F-414CC60B6E75">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:51 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome" id="864CA137-55FA-67AC-24EC-90A461773266">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:54 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor_alvo" id="F3A05D05-CAD5-2E54-2B4C-1A7EDE82AB28">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:57 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<constraintName>valor_inicial</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,19,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor_arrecadado" id="FF7CA8EF-A1B2-9B01-E18E-1CB78D6F0184">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:19:59 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<constraintName>valor_inicial</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,19,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prazo" id="EA7E62DA-615B-FBD7-AD42-0C4E1ECD2FC7">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:20:05 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0588698C-DC7A-3883-2606-98E398189C47" name="metas PK">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:20:09 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>51D7506A-8193-91A7-727F-414CC60B6E75</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="gastos_meta" directorySegmentName="seg_0" id="8A1CE816-A977-505F-F673-6BA3BEBEBDE9">
+<createdBy>Samir</createdBy>
+<createdTime>2023-09-20 02:22:41 UTC</createdTime>
+<ownerDesignName>infinity_database_model</ownerDesignName>
+<engineerTo>
+<item key="43B6931F-A4E4-441B-D2F5-1CED63B3BA39" value="true"/>
+</engineerTo>
+<sourcePk>0588698C-DC7A-3883-2606-98E398189C47</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C1AE46A6-C5DF-9302-DDAF-EB3BEE07C3C1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>36315E1F-2BEC-2E6D-7FCD-89B4AD4585B2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

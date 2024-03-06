@@ -1,5 +1,7 @@
 package com.example.infinitymoneymanager.databaseClasses
 
+import com.ita.infinity.models.Categoria
+
 fun main(){
     val test = DatabaseExamples()
     test.insertExample()
@@ -8,9 +10,9 @@ class DatabaseExamples {
     fun insertExample(){
         DatabaseManager.openConnection()
 
-        val meta = Meta()
+        val categoria = Categoria()
 
-        DatabaseManager.insert(meta)
+        DatabaseManager.insert(categoria)
 
         DatabaseManager.closeConnection()
     }
