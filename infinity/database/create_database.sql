@@ -102,7 +102,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- Table `infinity`.`fontes`
 -- -----------------------------------------------------
 CREATE TABLE `infinity`.`fontes` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `fonte` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -111,7 +111,7 @@ ENGINE = InnoDB;
 -- Table `infinity`.`categorias`
 -- -----------------------------------------------------
 CREATE TABLE `infinity`.`categorias` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `categoria` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
