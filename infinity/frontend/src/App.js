@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 const App = () => {
   const [toPrint, setToPrint] = useState('');
@@ -33,7 +34,7 @@ const App = () => {
             value={toPrint}
             onChange={(e) => setToPrint(e.target.value)}
         />
-        <button onClick={handlePrint}>Print Something</button>
+        <button className="button1" onClick={handlePrint}>Print Something</button>
         <div>
           <strong>Response:</strong> {response}
         </div>
