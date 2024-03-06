@@ -11,7 +11,7 @@ class DatabaseManager{
         @JvmStatic
         fun openConnection() {
             connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost/infinity",
+                "jdbc:mysql://localhost:3306/infinity",
                 "root",
                 "infinity"
             )
@@ -43,7 +43,7 @@ class DatabaseManager{
                 println("$name successfully inserted.")
             }
             catch (e: Exception){
-                println("Query failed. Verify the connection with database.")
+                println("Query failed. Verify the connection with database. \n $e")
             }
         }
         @JvmStatic

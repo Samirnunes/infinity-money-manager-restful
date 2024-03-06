@@ -11,11 +11,11 @@ import javax.persistence.Id
 class GanhoVariavel(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private var id: Int = 0,
-    private var valor: Double = 0.0,
-    private var fonte: String = "Outro",
-    private var descricao: String = "",
-    private var data: Date = Date(0)
+    private val id: Int = 0,
+    private val valor: Double = 0.0,
+    private val fonte: String = "Outro",
+    private val descricao: String = "",
+    private val data: Date = Date(0)
 ) : DatabaseObject(){
     override val name: String
         get() = "Ganho Variável"
@@ -24,17 +24,11 @@ class GanhoVariavel(
     override val sqlColumns: String
         get() = "id, valor, fonte, descricao, data"
 
-    fun getId(): Int {return id}
-    fun getValor(): Double {return valor}
-    fun getFonte(): String {return fonte}
-    fun getDescricao(): String {return descricao}
-    fun getData(): Date {return data}
-
     override fun setQueryVariables(query: PreparedStatement) {
-        query.setInt(1, this.getId())
-        query.setDouble(2, this.getValor())
-        query.setString(3, this.getFonte())
-        query.setString(4, this.getDescricao())
-        query.setDate(5, this.getData())
+        query.setInt(1, id)
+        query.setDouble(2, valor)
+        query.setString(3, fonte)
+        query.setString(4, descricao)
+        query.setDate(5, data)
     }
 }

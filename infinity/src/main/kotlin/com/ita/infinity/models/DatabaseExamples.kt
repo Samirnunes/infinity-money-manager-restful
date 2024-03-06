@@ -1,22 +1,15 @@
 package com.example.infinitymoneymanager.databaseClasses
 
-import java.sql.Date
-
 fun main(){
     val test = DatabaseExamples()
-    test.selectExample()
+    test.insertExample()
 }
 class DatabaseExamples {
     fun insertExample(){
         DatabaseManager.openConnection()
 
-        val meta = Meta(
-            20,
-            "Teste", 2.00,
-            1.00,
+        val meta = Meta()
 
-            "10/09/2023",
-        )
         DatabaseManager.insert(meta)
 
         DatabaseManager.closeConnection()

@@ -6,18 +6,19 @@ import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
+import kotlin.time.measureTime
 
 @Entity
 class GastoFixo(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private var id: Int = 0,
-    private var periodicidade: String = "Mensal",
-    private var valor: Double = 0.0,
-    private var categoria: String = "Outro",
-    private var descricao: String = "",
-    private var data: Date = Date(0),
-    private var metasId: Int = 0
+    private val id: Int = 0,
+    private val periodicidade: String = "Mensal",
+    private val valor: Double = 0.0,
+    private val categoria: String = "Outro",
+    private val descricao: String = "",
+    private val data: Date = Date(0),
+    private val metasId: Int = 0
 ) : DatabaseObject() {
     override val name: String
         get() = "Gasto Fixo"
@@ -26,21 +27,13 @@ class GastoFixo(
     override val sqlColumns: String
         get() = "id, periodicidade, valor, categoria, descricao, data, metas_id"
 
-    fun getId(): Int {return id}
-    fun getPeriodicidade(): String {return periodicidade}
-    fun getValor(): Double {return valor}
-    fun getCategoria(): String {return categoria}
-    fun getDescricao(): String {return descricao}
-    fun getData(): Date {return data}
-    fun getMetasId(): Int {return metasId}
-
     override fun setQueryVariables(query: PreparedStatement) {
-        query.setInt(1, this.getId())
-        query.setString(2, this.getPeriodicidade())
-        query.setDouble(3, this.getValor())
-        query.setString(4, this.getCategoria())
-        query.setString(5, this.getDescricao())
-        query.setDate(6, this.getData())
-        query.setInt(7, this.getMetasId())
+        query.setInt(1, id)
+        query.setString(2, periodicidade)
+        query.setDouble(3, valor)
+        query.setString(4, categoria)
+        query.setString(5, descricao)
+        query.setDate(6, data)
+        query.setInt(7, metasId)
     }
 }

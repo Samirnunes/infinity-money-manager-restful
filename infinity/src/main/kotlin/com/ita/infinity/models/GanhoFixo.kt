@@ -11,12 +11,12 @@ import javax.persistence.Id
 class GanhoFixo(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private var id: Int = 0,
-    private var periodicidade: String = "Mensal",
-    private var valor: Double = 0.0,
-    private var fonte: String = "Outro",
-    private var descricao: String = "",
-    private var data: Date = Date(0)
+    private val id: Int = 0,
+    private val periodicidade: String = "Mensal",
+    private val valor: Double = 0.0,
+    private val fonte: String = "Outro",
+    private val descricao: String = "",
+    private val data: Date = Date(0)
 ) : DatabaseObject() {
     override val name: String
         get() = "Ganho Fixo"
@@ -25,19 +25,12 @@ class GanhoFixo(
     override val sqlColumns: String
         get() = "id, periodicidade, valor, fonte, descricao, data"
 
-    fun getId(): Int {return id}
-    fun getPeriodicidade(): String {return periodicidade}
-    fun getValor(): Double {return valor}
-    fun getFonte(): String {return fonte}
-    fun getDescricao(): String {return descricao}
-    fun getData(): Date {return data}
-
     override fun setQueryVariables(query: PreparedStatement) {
-        query.setInt(1, this.getId())
-        query.setString(2, this.getPeriodicidade())
-        query.setDouble(3, this.getValor())
-        query.setString(4, this.getFonte())
-        query.setString(5, this.getDescricao())
-        query.setDate(6, this.getData())
+        query.setInt(1, id)
+        query.setString(2, periodicidade)
+        query.setDouble(3, valor)
+        query.setString(4, fonte)
+        query.setString(5, descricao)
+        query.setDate(6, data)
     }
 }
