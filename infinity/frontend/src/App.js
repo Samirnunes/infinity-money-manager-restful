@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import Home from "./Home";
-import AnotherScreen from './AnotherScreen';
+import Home from "./screens/Home";
+import AnotherScreen from './screens/AnotherScreen';
 import './App.css';
 
 const App = () => {
