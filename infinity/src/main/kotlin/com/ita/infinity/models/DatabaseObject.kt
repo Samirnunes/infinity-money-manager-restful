@@ -1,9 +1,7 @@
 package com.example.infinitymoneymanager.databaseClasses
 
 import java.sql.PreparedStatement
-import javax.persistence.Entity
 
-@Entity
 abstract class DatabaseObject{
     protected abstract val name: String
     protected abstract val sqlTable: String
