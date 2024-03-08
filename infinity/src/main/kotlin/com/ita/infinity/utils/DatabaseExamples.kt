@@ -10,8 +10,12 @@ fun main(){
 class DatabaseExamples {
     fun insertExample(){
         val dbConnector = DatabaseConnector()
-        val categoria = Categoria()
-        dbConnector.use { it.insert(categoria) }
+
+        val meta = Meta()
+        dbConnector.use { it.insert(meta) }
+
+        val gastoFixo = GastoFixo(metasId = 1)
+        dbConnector.use { it.insert(gastoFixo) }
     }
 
     fun selectExample(){

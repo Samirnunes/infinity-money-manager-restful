@@ -30,9 +30,9 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 -- -----------------------------------------------------
--- Table `infinity`.`ganhos_variaveis`
+-- Table `infinity`.`ganhos_unicos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `infinity`.`ganhos_variaveis` (
+CREATE TABLE IF NOT EXISTS `infinity`.`ganhos_unicos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `valor` DECIMAL(19,2) NOT NULL,
   `fonte` VARCHAR(50) NOT NULL,
@@ -79,9 +79,9 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 -- -----------------------------------------------------
--- Table `infinity`.`gastos_variaveis`
+-- Table `infinity`.`gastos_unicos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `infinity`.`gastos_variaveis` (
+CREATE TABLE IF NOT EXISTS `infinity`.`gastos_unicos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `valor` DECIMAL(19,2) NOT NULL,
   `categoria` VARCHAR(50) NOT NULL,

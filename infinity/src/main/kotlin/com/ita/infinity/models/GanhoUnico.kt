@@ -9,7 +9,7 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-class GanhoVariavel(
+class GanhoUnico(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private val id: Int = 0,
@@ -19,9 +19,9 @@ class GanhoVariavel(
     private val data: Date = Date(0)
 ) : DatabaseObject(){
     override val name: String
-        get() = "Ganho Variável"
+        get() = "Ganho Único"
     override val sqlTable: String
-        get() = "ganhos_variaveis"
+        get() = "ganhos-unicos"
     override val sqlColumns: String
         get() = "id, valor, fonte, descricao, data"
 

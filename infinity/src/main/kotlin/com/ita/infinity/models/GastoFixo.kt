@@ -18,7 +18,7 @@ class GastoFixo(
     private val categoria: String = "Outros",
     private val descricao: String = "",
     private val data: Date = Date(0),
-    private val metasId: Int = 0
+    private val metasId: Int = 1
 ) : DatabaseObject() {
     override val name: String
         get() = "Gasto Fixo"

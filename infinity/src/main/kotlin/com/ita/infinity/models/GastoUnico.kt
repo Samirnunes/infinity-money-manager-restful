@@ -9,7 +9,7 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-class GastoVariavel(
+class GastoUnico(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private val id: Int = 0,
@@ -17,12 +17,12 @@ class GastoVariavel(
     private val categoria: String = "Outros",
     private val descricao: String = "",
     private val data: Date = Date(0),
-    private val metasId: Int = 0
+    private val metasId: Int = 1
 ) : DatabaseObject() {
     override val name: String
-        get() = "Gasto Variável"
+        get() = "Gasto Único"
     override val sqlTable: String
-        get() = "gastos_variaveis"
+        get() = "gastos_unicos"
     override val sqlColumns: String
         get() = "id, valor, categoria, descricao, data, metas_id"
 

@@ -1,7 +1,7 @@
 package com.ita.infinity.services
 
 import com.example.infinitymoneymanager.databaseClasses.GastoFixo
-import com.example.infinitymoneymanager.databaseClasses.GastoVariavel
+import com.example.infinitymoneymanager.databaseClasses.GastoUnico
 import com.ita.infinity.models.Categoria
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -20,7 +20,7 @@ class AdicionarDespesasScreen {
                             data: Date = Date.valueOf(LocalDate.now())){
         dbConnector.use{
             it.insert(
-                GastoVariavel(
+                GastoUnico(
                     valor = valor,
                     categoria = categoria,
                     descricao = descricao,
@@ -32,7 +32,7 @@ class AdicionarDespesasScreen {
 
     fun deleteGastoVariavel(id: Int){
         dbConnector.use {
-            it.delete(GastoVariavel(), "id = $id")
+            it.delete(GastoUnico(), "id = $id")
         }
     }
 
@@ -44,7 +44,7 @@ class AdicionarDespesasScreen {
         deleteGastoVariavel(id)
         dbConnector.use{
             it.insert(
-                GastoVariavel(
+                GastoUnico(
                     id = id,
                     valor = valor,
                     categoria = categoria,
