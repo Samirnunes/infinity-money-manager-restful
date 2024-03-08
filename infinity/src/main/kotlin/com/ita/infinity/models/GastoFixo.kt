@@ -1,12 +1,12 @@
 package com.example.infinitymoneymanager.databaseClasses
 
+import com.ita.infinity.models.DatabaseObject
 import java.sql.Date
 import java.sql.PreparedStatement
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
-import kotlin.time.measureTime
 
 @Entity
 class GastoFixo(
@@ -15,7 +15,7 @@ class GastoFixo(
     private val id: Int = 0,
     private val periodicidade: String = "Mensal",
     private val valor: Double = 0.0,
-    private val categoria: String = "Outro",
+    private val categoria: String = "Outros",
     private val descricao: String = "",
     private val data: Date = Date(0),
     private val metasId: Int = 0

@@ -1,6 +1,7 @@
 package com.example.infinitymoneymanager.databaseClasses
 
 import com.ita.infinity.models.Categoria
+import com.ita.infinity.services.DatabaseConnector
 
 fun main(){
     val test = DatabaseExamples()
@@ -8,23 +9,17 @@ fun main(){
 }
 class DatabaseExamples {
     fun insertExample(){
-        DatabaseManager.openConnection()
-
+        val dbConnector = DatabaseConnector()
         val categoria = Categoria()
-
-        DatabaseManager.insert(categoria)
-
-        DatabaseManager.closeConnection()
+        dbConnector.use { it.insert(categoria) }
     }
 
     fun selectExample(){
-        DatabaseManager.openConnection()
-
-        val result = DatabaseManager.select(GastoFixo(), columns = "id, valor",
-            whereCondition = "id > 4 AND id < 10", distinctStatement = true)
-
+        val dbConnector = DatabaseConnector()
+        val result = dbConnector.use{
+            it.select(GastoFixo(), columns = "id, valor",
+                whereCondition = "id > 4 AND id < 10", distinctStatement = true)
+        }
         println(result)
-
-        DatabaseManager.closeConnection()
     }
 }

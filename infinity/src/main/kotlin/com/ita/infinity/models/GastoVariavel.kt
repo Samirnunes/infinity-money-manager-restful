@@ -1,5 +1,6 @@
 package com.example.infinitymoneymanager.databaseClasses
 
+import com.ita.infinity.models.DatabaseObject
 import java.sql.Date
 import java.sql.PreparedStatement
 import javax.persistence.Entity
@@ -13,7 +14,7 @@ class GastoVariavel(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private val id: Int = 0,
     private val valor: Double = 0.0,
-    private val categoria: String = "Outro",
+    private val categoria: String = "Outros",
     private val descricao: String = "",
     private val data: Date = Date(0),
     private val metasId: Int = 0

@@ -1,4 +1,4 @@
-package com.example.infinitymoneymanager.databaseClasses
+package com.ita.infinity.models
 
 import java.sql.PreparedStatement
 

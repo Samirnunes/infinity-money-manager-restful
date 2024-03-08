@@ -1,7 +1,5 @@
 package com.ita.infinity.models
 
-
-import com.example.infinitymoneymanager.databaseClasses.DatabaseObject
 import java.sql.PreparedStatement
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

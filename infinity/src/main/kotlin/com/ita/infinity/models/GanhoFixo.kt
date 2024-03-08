@@ -1,5 +1,6 @@
 package com.example.infinitymoneymanager.databaseClasses
 
+import com.ita.infinity.models.DatabaseObject
 import java.sql.Date
 import java.sql.PreparedStatement
 import javax.persistence.Entity
@@ -14,7 +15,7 @@ class GanhoFixo(
     private val id: Int = 0,
     private val periodicidade: String = "Mensal",
     private val valor: Double = 0.0,
-    private val fonte: String = "Outro",
+    private val fonte: String = "Outros",
     private val descricao: String = "",
     private val data: Date = Date(0)
 ) : DatabaseObject() {
