@@ -14,11 +14,16 @@ class AdicionarDespesasController {
     @Autowired
     private lateinit var adicionarDespesasScreen: AdicionarDespesasScreen
 
+    @GetMapping("/get-all-gastos-unicos")
+    fun getAllGastosUnicos(): MutableList<MutableMap<String, Any>>? {
+        return adicionarDespesasScreen.getAllGastosUnicos()
+    }
+
     @PostMapping("/get-gasto-unico")
-    fun getGastoUnicoButton(
+    fun getGastoUnicoById(
         @RequestParam @NotNull id: Int = 1
     ): MutableList<MutableMap<String, Any>>? {
-        return adicionarDespesasScreen.getGastoUnico(id)
+        return adicionarDespesasScreen.getGastoUnicoById(id)
     }
 
     @PostMapping("/insert-gasto-unico")
@@ -47,6 +52,11 @@ class AdicionarDespesasController {
         @RequestParam @NotNull data: Date = Date.valueOf(LocalDate.now())
     ){
         adicionarDespesasScreen.modifyGastoUnico(id, valor, categoria, descricao, data)
+    }
+
+    @GetMapping("/get-all-gastos-fixos")
+    fun getAllGastosFixos(): MutableList<MutableMap<String, Any>>? {
+        return adicionarDespesasScreen.getAllGastosFixos()
     }
 
     @GetMapping("/get-gasto-fixo")
@@ -78,6 +88,11 @@ class AdicionarDespesasController {
                               @RequestParam @NotNull descricao: String = "",
                               @RequestParam @NotNull data: Date =  Date.valueOf(LocalDate.now())){
         adicionarDespesasScreen.modifyGastoFixo(id, periodicidade, valor, categoria, descricao, data)
+    }
+
+    @GetMapping("/get-all-categorias")
+    fun getAllCategorias(): MutableList<MutableMap<String, Any>>? {
+        return adicionarDespesasScreen.getAllCategorias()
     }
 
     @GetMapping("/get-categoria")

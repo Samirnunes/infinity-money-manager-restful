@@ -13,7 +13,13 @@ class AdicionarDespesasScreen {
     @Autowired
     private lateinit var dbConnector: DatabaseConnector
 
-    fun getGastoUnico(id: Int): MutableList<MutableMap<String, Any>>? {
+    fun getAllGastosUnicos(): MutableList<MutableMap<String, Any>>?{
+        dbConnector.use {
+            return it.select(GastoUnico())
+        }
+    }
+
+    fun getGastoUnicoById(id: Int): MutableList<MutableMap<String, Any>>? {
         dbConnector.use {
             return it.select(GastoUnico(), whereCondition = "id = $id")
         }
@@ -58,6 +64,12 @@ class AdicionarDespesasScreen {
                     data = data
                 )
             )
+        }
+    }
+
+    fun getAllGastosFixos(): MutableList<MutableMap<String, Any>>?{
+        dbConnector.use {
+            return it.select(GastoFixo())
         }
     }
 
@@ -109,6 +121,12 @@ class AdicionarDespesasScreen {
                     data = data
                 )
             )
+        }
+    }
+
+    fun getAllCategorias(): MutableList<MutableMap<String, Any>>?{
+        dbConnector.use {
+            return it.select(Categoria())
         }
     }
 

@@ -15,8 +15,8 @@ class MetasController {
     private lateinit var metasScreen: MetasScreen
 
     @PostMapping("/get-meta")
-    fun getMetaButton(@RequestParam @NotNull id: Int): MutableList<MutableMap<String, Any>>? {
-        return metasScreen.getMeta(id)
+    fun getMetaById(@RequestParam @NotNull id: Int): MutableList<MutableMap<String, Any>>? {
+        return metasScreen.getMetaById(id)
     }
 
     @PostMapping("/insert-meta")

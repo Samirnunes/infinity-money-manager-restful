@@ -1,6 +1,5 @@
 package com.ita.infinity.services
 
-import com.example.infinitymoneymanager.databaseClasses.GastoUnico
 import com.example.infinitymoneymanager.databaseClasses.Meta
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -12,7 +11,13 @@ class MetasScreen {
     @Autowired
     private lateinit var dbConnector: DatabaseConnector
 
-    fun getMeta(id: Int): MutableList<MutableMap<String, Any>>? {
+    fun getAllMetas(): MutableList<MutableMap<String, Any>>?{
+        dbConnector.use {
+            return it.select(Meta())
+        }
+    }
+
+    fun getMetaById(id: Int): MutableList<MutableMap<String, Any>>? {
         dbConnector.use {
             return it.select(Meta(), whereCondition = "id = $id")
         }
