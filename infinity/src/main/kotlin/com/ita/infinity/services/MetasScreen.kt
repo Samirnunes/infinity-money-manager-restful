@@ -1,5 +1,6 @@
 package com.ita.infinity.services
 
+import com.example.infinitymoneymanager.databaseClasses.GastoUnico
 import com.example.infinitymoneymanager.databaseClasses.Meta
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -10,6 +11,12 @@ import java.time.LocalDate
 class MetasScreen {
     @Autowired
     private lateinit var dbConnector: DatabaseConnector
+
+    fun getMeta(id: Int): MutableList<MutableMap<String, Any>>? {
+        dbConnector.use {
+            return it.select(Meta(), whereCondition = "id = $id")
+        }
+    }
     fun insertMeta(nome: String,
                    valorAlvo: Double = 0.0,
                    valorArrecadado: Double = 0.0,

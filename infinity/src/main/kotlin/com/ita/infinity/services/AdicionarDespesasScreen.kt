@@ -13,11 +13,17 @@ class AdicionarDespesasScreen {
     @Autowired
     private lateinit var dbConnector: DatabaseConnector
 
+    fun getGastoUnico(id: Int): MutableList<MutableMap<String, Any>>? {
+        dbConnector.use {
+            return it.select(GastoUnico(), whereCondition = "id = $id")
+        }
+    }
+
     // no front: if recorrência == "Único" -> usar addGastoVariavel
-    fun insertGastoVariavel(valor: Double,
-                            categoria: String = "Outros",
-                            descricao: String = "",
-                            data: Date = Date.valueOf(LocalDate.now())){
+    fun insertGastoUnico(valor: Double = 0.0,
+                        categoria: String = "Outros",
+                        descricao: String = "",
+                        data: Date = Date.valueOf(LocalDate.now())){
         dbConnector.use{
             it.insert(
                 GastoUnico(
@@ -30,18 +36,18 @@ class AdicionarDespesasScreen {
         }
     }
 
-    fun deleteGastoVariavel(id: Int){
+    fun deleteGastoUnico(id: Int){
         dbConnector.use {
             it.delete(GastoUnico(), "id = $id")
         }
     }
 
-    fun modifyGastoVariavel(id: Int,
+    fun modifyGastoUnico(id: Int,
                             valor: Double,
                             categoria: String = "Outros",
                             descricao: String = "",
                             data: Date = Date.valueOf(LocalDate.now())){
-        deleteGastoVariavel(id)
+        deleteGastoUnico(id)
         dbConnector.use{
             it.insert(
                 GastoUnico(
@@ -52,6 +58,12 @@ class AdicionarDespesasScreen {
                     data = data
                 )
             )
+        }
+    }
+
+    fun getGastoFixo(id: Int): MutableList<MutableMap<String, Any>>? {
+        dbConnector.use {
+            return it.select(GastoFixo(), whereCondition = "id = $id")
         }
     }
 
@@ -97,6 +109,12 @@ class AdicionarDespesasScreen {
                     data = data
                 )
             )
+        }
+    }
+
+    fun getCategoria(id: Int): MutableList<MutableMap<String, Any>>? {
+        dbConnector.use {
+            return it.select(Categoria(), whereCondition = "id = $id")
         }
     }
 

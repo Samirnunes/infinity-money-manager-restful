@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Home from "./screens/Home";
 import AnotherScreen from './screens/AnotherScreen';
+import AdicionarDespesas from "./screens/AdicionarDespesas";
 import './App.css';
 
 const App = () => {
@@ -13,19 +14,25 @@ const App = () => {
                             <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <Link to="/red">Another screen</Link>
+                            <Link to="/another-screen">Another screen</Link>
+                        </li>
+                        <li>
+                            <Link to="/adicionar-despesas">Adicionar despesas screen</Link>
                         </li>
                     </ul>
                 </nav>
 
                 <Routes>
                     <Route
-                        path="/red"
-                        element={<AnotherScreen />} />
-                    <Route
                         path="/"
                         element={<Home />}
                     />
+                    <Route
+                        path="/another-screen"
+                        element={<AnotherScreen />} />
+                    <Route
+                        path="/adicionar-despesas"
+                        element={<AdicionarDespesas />} />
                 </Routes>
             </div>
         </Router>
