@@ -95,9 +95,9 @@ const AdicionarDespesas = () => {
     }
 
     return (
-        <div>
+        <div style={{textAlign: 'center'}}>
             <h1>Adicionar Despesas</h1>
-            <div>
+            <div style={{textAlign: 'left'}}>
                 {/* Form for data input */}
                 <label>
                     Valor:
@@ -158,7 +158,7 @@ const AdicionarDespesas = () => {
                     Listar Gastos Únicos
                 </button>
             </div>
-            <div>
+            <div style={{textAlign: 'left'}}>
                 <strong>Response:</strong>
                 <pre>{response}</pre>
             </div>

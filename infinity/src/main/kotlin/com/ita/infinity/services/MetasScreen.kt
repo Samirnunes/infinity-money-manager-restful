@@ -25,9 +25,9 @@ class MetasScreen {
     fun insertMeta(nome: String,
                    valorAlvo: Double = 0.0,
                    valorArrecadado: Double = 0.0,
-                   prazo: Date = Date.valueOf(LocalDate.now())){
+                   prazo: Date = Date.valueOf(LocalDate.now())): String {
         dbConnector.use{
-            it.insert(
+            return it.insert(
                 Meta(
                     nome = nome,
                     valorAlvo = valorAlvo,
@@ -38,9 +38,9 @@ class MetasScreen {
         }
     }
 
-    fun deleteMeta(id: Int){
+    fun deleteMeta(id: Int): String {
         dbConnector.use {
-            it.delete(Meta(), whereCondition = "id = $id")
+            return it.delete(Meta(), whereCondition = "id = $id")
         }
     }
 
@@ -48,10 +48,10 @@ class MetasScreen {
                    nome: String,
                    valorAlvo: Double = 0.0,
                    valorArrecadado: Double = 0.0,
-                   prazo: Date = Date.valueOf(LocalDate.now())){
+                   prazo: Date = Date.valueOf(LocalDate.now())): String {
         deleteMeta(id)
         dbConnector.use{
-            it.insert(
+            return it.insert(
                 Meta(
                     id = id,
                     nome = nome,
