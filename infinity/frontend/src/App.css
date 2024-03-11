@@ -43,7 +43,7 @@ textarea {
   margin-bottom: 10px;
 }
 
-.button1 {
+.print {
   background-color: #4caf52;
   color: white;
   padding: 10px 15px;
@@ -52,12 +52,40 @@ textarea {
   cursor: pointer;
 }
 
-.button1:hover {
+.print:hover {
   background-color: #45a049;
 }
 
 .response {
   margin-top: 20px;
+}
+
+.insertGastoUnicoButton{
+  background-color: #4caf52;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.getAllGastosUnicosButton{
+  background-color: #4caf52;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deleteGastoUnicoButton{
+  background-color: #4caf52;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .button2 {

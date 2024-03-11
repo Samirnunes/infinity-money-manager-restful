@@ -3,28 +3,28 @@ import React, { useState } from 'react';
 
 const AdicionarDespesas = () => {
     const [response, setResponse] = useState('');
-    const [formData, setFormData] = useState({
-        id: 1,
+    const [insertData, setInsertData] = useState({
         valor: 0,
         categoria: 'Outros',
         descricao: '',
         data: new Date().toISOString().split('T')[0],
     });
+    const [deleteData, setDeleteData] = useState({
+        id: 0,
+    });
 
-    const handleGetGastoUnico = async () => {
+    const handleGetAllGastosUnicos = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/v1/infinity/adicionar-despesas/get-gasto-unico', {
-                method: 'POST',
+            const response = await fetch('http://localhost:8080/api/v1/infinity/adicionar-despesas/get-all-gastos-unicos', {
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: new URLSearchParams({ id: formData.id }),
             });
 
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-
             const result = await response.json();
             setResponse(JSON.stringify(result, null, 2));
         } catch (error) {
@@ -40,10 +40,10 @@ const AdicionarDespesas = () => {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: new URLSearchParams({
-                    valor: formData.valor,
-                    categoria: formData.categoria,
-                    descricao: formData.descricao,
-                    data: formData.data,
+                    valor: insertData.valor,
+                    categoria: insertData.categoria,
+                    descricao: insertData.descricao,
+                    data: insertData.data,
                 }),
             });
 
@@ -52,53 +52,111 @@ const AdicionarDespesas = () => {
             }
 
             const responseBody = await response.text();
-            if (!responseBody) {
-                setResponse('Inserted Gasto Unico Successfully.');
-            } else {
-                const result = JSON.parse(responseBody);
-                setResponse(JSON.stringify(result, null, 2));
-            }
+            setResponse(responseBody)
         } catch (error) {
             console.error('Error:', error.message);
         }
     };
 
-    const handleChange = (field, value) => {
-        setFormData({
-            ...formData,
+    const handleDeleteGastoUnico = async () => {
+        try {
+            const response = await fetch('http://localhost:8080/api/v1/infinity/adicionar-despesas/delete-gasto-unico', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    id: deleteData.id
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const responseBody = await response.text();
+            setResponse(responseBody)
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    };
+
+    const handleInsertChange = (field, value) => {
+        setInsertData({
+            ...insertData,
             [field]: value,
         });
     };
 
+    const handleDeleteChange = (field, value) => {
+        setDeleteData({
+            ...deleteData,
+            [field]: value,
+        });
+    }
+
     return (
         <div>
-            <h1>Adicionar Despesas Frontend</h1>
+            <h1>Adicionar Despesas</h1>
             <div>
                 {/* Form for data input */}
                 <label>
-                    ID:
-                    <input type="number" value={formData.id} onChange={(e) => handleChange('id', e.target.value)} />
-                </label>
-                <label>
                     Valor:
-                    <input type="number" value={formData.valor} onChange={(e) => handleChange('valor', e.target.value)} />
+                    <input type="number"
+                           value={insertData.valor}
+                           onChange={(e) => handleInsertChange('valor', e.target.value)}
+                    />
                 </label>
+                <br/>
                 <label>
                     Categoria:
-                    <input type="text" value={formData.categoria} onChange={(e) => handleChange('categoria', e.target.value)} />
+                    <input type="text"
+                           value={insertData.categoria}
+                           onChange={(e) => handleInsertChange('categoria', e.target.value)}
+                    />
                 </label>
+                <br/>
                 <label>
                     Descrição:
-                    <input type="text" value={formData.descricao} onChange={(e) => handleChange('descricao', e.target.value)} />
+                    <input type="text"
+                           value={insertData.descricao}
+                           onChange={(e) => handleInsertChange('descricao', e.target.value)}
+                    />
                 </label>
+                <br/>
                 <label>
                     Data:
-                    <input type="date" value={formData.data} onChange={(e) => handleChange('data', e.target.value)} />
+                    <input type="date"
+                           value={insertData.data}
+                           onChange={(e) => handleInsertChange('data', e.target.value)}
+                    />
                 </label>
-
-                {/* Buttons for each operation */}
-                <button onClick={handleGetGastoUnico}>Get Gasto Unico</button>
-                <button onClick={handleInsertGastoUnico}>Insert Gasto Unico</button>
+                <br/>
+                <button className="insertGastoUnicoButton" onClick={handleInsertGastoUnico}>Adicionar Gasto Único
+                </button>
+                <br/>
+                <br/>
+                <br/>
+                <label>
+                    Excluir ID:
+                    <input type="number"
+                           value={deleteData.id}
+                           onChange={(e) => handleDeleteChange('id', e.target.value)}
+                    />
+                </label>
+                <br/>
+                <br/>
+                <button
+                    className="deleteGastoUnicoButton"
+                    onClick={handleDeleteGastoUnico}>
+                    Deletar Gasto Único
+                </button>
+                <br/>
+                <br/>
+                <button
+                    className="getAllGastosUnicosButton"
+                    onClick={handleGetAllGastosUnicos}>
+                    Listar Gastos Únicos
+                </button>
             </div>
             <div>
                 <strong>Response:</strong>

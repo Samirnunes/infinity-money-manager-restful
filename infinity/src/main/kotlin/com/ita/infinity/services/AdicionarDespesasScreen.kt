@@ -29,9 +29,9 @@ class AdicionarDespesasScreen {
     fun insertGastoUnico(valor: Double = 0.0,
                         categoria: String = "Outros",
                         descricao: String = "",
-                        data: Date = Date.valueOf(LocalDate.now())){
+                        data: Date = Date.valueOf(LocalDate.now())): String {
         dbConnector.use{
-            it.insert(
+            return it.insert(
                 GastoUnico(
                     valor = valor,
                     categoria = categoria,
@@ -42,9 +42,9 @@ class AdicionarDespesasScreen {
         }
     }
 
-    fun deleteGastoUnico(id: Int){
+    fun deleteGastoUnico(id: Int): String {
         dbConnector.use {
-            it.delete(GastoUnico(), "id = $id")
+            return it.delete(GastoUnico(), "id = $id")
         }
     }
 
@@ -52,10 +52,10 @@ class AdicionarDespesasScreen {
                             valor: Double,
                             categoria: String = "Outros",
                             descricao: String = "",
-                            data: Date = Date.valueOf(LocalDate.now())){
+                            data: Date = Date.valueOf(LocalDate.now())): String {
         deleteGastoUnico(id)
         dbConnector.use{
-            it.insert(
+            return it.insert(
                 GastoUnico(
                     id = id,
                     valor = valor,
@@ -83,9 +83,9 @@ class AdicionarDespesasScreen {
                         valor: Double = 0.0,
                         categoria: String = "Outros",
                         descricao: String = "",
-                        data: Date =  Date.valueOf(LocalDate.now())){
+                        data: Date =  Date.valueOf(LocalDate.now())): String {
         dbConnector.use{
-            it.insert(
+            return it.insert(
                 GastoFixo(
                     periodicidade = periodicidade,
                     valor = valor,
@@ -97,9 +97,9 @@ class AdicionarDespesasScreen {
         }
     }
 
-    fun deleteGastoFixo(id: Int){
+    fun deleteGastoFixo(id: Int): String {
         dbConnector.use {
-            it.delete(GastoFixo(), "id = $id")
+            return it.delete(GastoFixo(), "id = $id")
         }
     }
 
@@ -108,10 +108,10 @@ class AdicionarDespesasScreen {
                         valor: Double = 0.0,
                         categoria: String = "Outros",
                         descricao: String = "",
-                        data: Date =  Date.valueOf(LocalDate.now())){
+                        data: Date =  Date.valueOf(LocalDate.now())): String {
         deleteGastoFixo(id)
         dbConnector.use{
-            it.insert(
+            return it.insert(
                 GastoFixo(
                     id = id,
                     periodicidade = periodicidade,
@@ -136,26 +136,26 @@ class AdicionarDespesasScreen {
         }
     }
 
-    fun insertCategoria(categoria: String){
+    fun insertCategoria(categoria: String): String {
         dbConnector.use{
-            it.insert(
+            return it.insert(
                 Categoria(categoria = categoria)
             )
         }
     }
 
-    fun deleteCategoria(id: Int){
+    fun deleteCategoria(id: Int): String {
         dbConnector.use{
-            it.delete(
+            return it.delete(
                 Categoria(id=id)
             )
         }
     }
 
-    fun modifyCategoria(id: Int, categoria: String){
+    fun modifyCategoria(id: Int, categoria: String): String {
         deleteCategoria(id)
         dbConnector.use{
-            it.insert(
+            return it.insert(
                 Categoria(
                     id = id,
                     categoria = categoria

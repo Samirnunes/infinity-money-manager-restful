@@ -32,15 +32,15 @@ class AdicionarDespesasController {
         @RequestParam @NotNull categoria: String = "Outros",
         @RequestParam @NotNull descricao: String = "",
         @RequestParam @NotNull data: Date = Date.valueOf(LocalDate.now())
-        ){
-        adicionarDespesasScreen.insertGastoUnico(valor, categoria, descricao, data)
+        ): String {
+        return adicionarDespesasScreen.insertGastoUnico(valor, categoria, descricao, data)
     }
 
     @DeleteMapping("/delete-gasto-unico")
     fun deleteGastoUnicoButton(
         @RequestParam @NotNull id: Int
-    ){
-        adicionarDespesasScreen.deleteGastoUnico(id)
+    ): String {
+        return adicionarDespesasScreen.deleteGastoUnico(id)
     }
 
     @PostMapping("/modify-gasto-unico")

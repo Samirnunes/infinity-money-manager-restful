@@ -33,7 +33,7 @@ const Home = () => {
                 value={toPrint}
                 onChange={(e) => setToPrint(e.target.value)}
             />
-            <button className="button1" onClick={handlePrint}>
+            <button className="Print" onClick={handlePrint}>
                 Print Something
             </button>
             <div>

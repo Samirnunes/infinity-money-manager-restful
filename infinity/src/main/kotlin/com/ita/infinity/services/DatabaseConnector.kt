@@ -18,13 +18,11 @@ class DatabaseConnector: Closeable{
             "root",
             "infinity"
         )
-        println("Connection with database opened successfully.")
     }
 
     private fun closeConnection() {
         try{
             connection!!.close()
-            println("Connection with database closed successfully.")
         }
         catch (e : Exception){
             println("Connection with database is already closed.")
@@ -35,7 +33,7 @@ class DatabaseConnector: Closeable{
         this.closeConnection()
     }
 
-    fun insert(databaseObject: DatabaseObject){
+    fun insert(databaseObject: DatabaseObject): String {
         this.openConnection()
         val name = databaseObject.getObjectName()
         val sqlColumns = databaseObject.getSqlColumnsNames()
@@ -47,15 +45,19 @@ class DatabaseConnector: Closeable{
         try {
             val query = connection!!.prepareStatement(statement)
             databaseObject.setQueryVariables(query)
-            query.execute()
-            println("$name successfully inserted.")
+            if(query.executeUpdate() != 0){
+                return "$name successfully inserted."
+            }
+            return "Query failed. Can't insert."
         }
         catch (e: Exception){
-            println("Query failed. Verify the connection with database. \n $e")
+            val message = "Query failed. Verify the connection with database. \n $e"
+            println(message)
+            return message
         }
     }
 
-    fun delete(databaseObject: DatabaseObject, whereCondition: String = ""){
+    fun delete(databaseObject: DatabaseObject, whereCondition: String = ""): String {
         this.openConnection()
         val name = databaseObject.getObjectName()
         val sqlTable = databaseObject.getSqlTableName()
@@ -65,11 +67,12 @@ class DatabaseConnector: Closeable{
         }
         try{
             val query = connection!!.prepareStatement(statement)
-            query.execute()
-            println("$name successfully deleted.")
+            if(query.executeUpdate() != 0)
+                return "$name successfully deleted."
+            return "Query failed. This data probably doesn't exist."
         }
         catch (e : Exception){
-            println("Query failed. Verify the connection with database.")
+            return "Query failed. Verify the connection with database."
         }
     }
 
@@ -86,12 +89,13 @@ class DatabaseConnector: Closeable{
         }
         try {
             val query = connection!!.prepareStatement(statement)
-            query.execute()
-            println("Selection successfully done in $name")
-            return queryToSelectResult(query)
+            if(query.execute()){
+                return queryToSelectResult(query)
+            }
+            return null
         }
         catch (e : Exception){
-            println("Query failed. Verify the connection with database.")
+            println("Query failed. Verify the connection with database\n$e.")
         }
         return null
     }
