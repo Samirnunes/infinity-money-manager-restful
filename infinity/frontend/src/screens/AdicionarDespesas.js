@@ -131,7 +131,10 @@ const AdicionarDespesas = () => {
                     />
                 </label>
                 <br/>
-                <button className="insertGastoUnicoButton" onClick={handleInsertGastoUnico}>Adicionar Gasto Único
+                <button
+                    className="insertGastoUnicoButton"
+                    onClick={handleInsertGastoUnico}>
+                    Adicionar gasto único
                 </button>
                 <br/>
                 <br/>
@@ -148,14 +151,14 @@ const AdicionarDespesas = () => {
                 <button
                     className="deleteGastoUnicoButton"
                     onClick={handleDeleteGastoUnico}>
-                    Deletar Gasto Único
+                    Deletar gasto único
                 </button>
                 <br/>
                 <br/>
                 <button
                     className="getAllGastosUnicosButton"
                     onClick={handleGetAllGastosUnicos}>
-                    Listar Gastos Únicos
+                    Listar gastos únicos
                 </button>
             </div>
             <div style={{textAlign: 'left'}}>

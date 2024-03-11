@@ -32,7 +32,7 @@ class MetasController {
         return metasScreen.insertMeta(nome, valorAlvo, valorArrecadado, prazo)
     }
 
-    @PostMapping("/delete-meta")
+    @DeleteMapping("/delete-meta")
     fun deleteMetaButton(@RequestParam @NotNull id: Int): String {
         return metasScreen.deleteMeta(id)
     }

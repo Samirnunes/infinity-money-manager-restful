@@ -57,6 +57,29 @@ const Metas = () => {
         }
     };
 
+    const handleDeleteMeta= async () => {
+        try {
+            const response = await fetch('http://localhost:8080/api/v1/infinity/metas/delete-meta', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    id: deleteData.id
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const responseBody = await response.text();
+            console.log(responseBody)
+            setResponse(responseBody)
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    };
+
     const handleInsertChange = (field, value) => {
         setInsertData({
             ...insertData,
@@ -111,15 +134,34 @@ const Metas = () => {
                 <button
                     className="insertGastoUnicoButton"
                     onClick={handleInsertMeta}>
-                    Adicionar Meta
+                    Adicionar meta
                 </button>
 
                 <br/>
                 <br/>
+
+                <label>
+                    Excluir ID:
+                    <input type="number"
+                           value={deleteData.id}
+                           onChange={(e) => handleDeleteChange('id', e.target.value)}
+                    />
+                </label>
+                <br/>
+                <br/>
+                <button
+                    className="deleteGastoUnicoButton"
+                    onClick={handleDeleteMeta}>
+                    Deletar meta
+                </button>
+
+                <br/>
+                <br/>
+
                 <button
                     className="getAllGastosUnicosButton"
                     onClick={handleGetAllMetas}>
-                    Listar Metas
+                    Listar metas
                 </button>
 
                 <div style={{textAlign: 'left'}}>

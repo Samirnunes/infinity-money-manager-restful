@@ -17,7 +17,7 @@ const App = () => {
                             <Link to="/metas">Metas</Link>
                         </li>
                         <li>
-                            <Link to="/adicionar-despesas">Adicionar despesas screen</Link>
+                            <Link to="/adicionar-despesas">Adicionar Despesas</Link>
                         </li>
                     </ul>
                 </nav>
