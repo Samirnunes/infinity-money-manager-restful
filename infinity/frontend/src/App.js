@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import Home from "./screens/Home";
-import Metas from './screens/Metas';
-import AdicionarDespesas from "./screens/AdicionarDespesas";
+import HomeScreen from "./screens/Home/HomeScreen";
+import MetasScreen from './screens/Metas/MetasScreen';
+import AdicionarDespesasScreen from "./screens/AdicionarDespesas/AdicionarDespesasScreen";
 import './App.css';
 
 const App = () => {
@@ -25,14 +25,14 @@ const App = () => {
                 <Routes>
                     <Route
                         path="/"
-                        element={<Home />}
+                        element={<HomeScreen />}
                     />
                     <Route
                         path="/metas"
-                        element={<Metas />} />
+                        element={<MetasScreen />} />
                     <Route
                         path="/adicionar-despesas"
-                        element={<AdicionarDespesas />} />
+                        element={<AdicionarDespesasScreen />} />
                 </Routes>
             </div>
         </Router>
