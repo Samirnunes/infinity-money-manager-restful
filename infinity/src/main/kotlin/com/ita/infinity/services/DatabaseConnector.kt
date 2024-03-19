@@ -25,7 +25,7 @@ class DatabaseConnector: Closeable{
             connection!!.close()
         }
         catch (e : Exception){
-            println("Connection with database is already closed.")
+            println("A conexão com o banco de dados já está fechada.")
         }
     }
 
@@ -46,12 +46,12 @@ class DatabaseConnector: Closeable{
             val query = connection!!.prepareStatement(statement)
             databaseObject.setQueryVariables(query)
             if(query.executeUpdate() != 0){
-                return "$name successfully inserted."
+                return "$name adicionado com sucesso!."
             }
-            return "Query failed. Can't insert."
+            return "Consulta falhou. Não é possível inserir."
         }
         catch (e: Exception){
-            val message = "Query failed. Verify the connection with database. \n $e"
+            val message = "Consulta falhou. Verifique a conexão com o banco de dados.\n$e"
             println(message)
             return message
         }
@@ -69,10 +69,10 @@ class DatabaseConnector: Closeable{
             val query = connection!!.prepareStatement(statement)
             if(query.executeUpdate() != 0)
                 return "$name successfully deleted."
-            return "Query failed. This data probably doesn't exist."
+            return "Consulta falhou. Esse dado provavelmente não existe."
         }
         catch (e : Exception){
-            return "Query failed. Verify the connection with database."
+            return "Consulta falhou. Verifique a conexão com o banco de dados."
         }
     }
 
@@ -95,7 +95,7 @@ class DatabaseConnector: Closeable{
             return null
         }
         catch (e : Exception){
-            println("Query failed. Verify the connection with database\n$e.")
+            println("Consulta falhou. Verifique a conexão com o banco de dados.\n$e.")
         }
         return null
     }

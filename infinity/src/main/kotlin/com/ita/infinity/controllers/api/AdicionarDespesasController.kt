@@ -91,8 +91,15 @@ class AdicionarDespesasController {
     }
 
     @GetMapping("/get-all-categorias")
-    fun getAllCategorias(): MutableList<MutableMap<String, Any>>? {
-        return adicionarDespesasScreen.getAllCategorias()
+    fun getAllCategorias(): MutableList<String> {
+        val rows = adicionarDespesasScreen.getAllCategorias()
+        val categorias = mutableListOf<String>()
+        if (rows != null) {
+            for(row in rows){
+                categorias.add(row["categoria"].toString())
+            }
+        }
+        return categorias
     }
 
     @GetMapping("/get-categoria")

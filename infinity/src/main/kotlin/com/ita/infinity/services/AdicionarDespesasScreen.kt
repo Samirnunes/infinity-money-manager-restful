@@ -126,7 +126,7 @@ class AdicionarDespesasScreen {
 
     fun getAllCategorias(): MutableList<MutableMap<String, Any>>?{
         dbConnector.use {
-            return it.select(Categoria())
+            return it.select(Categoria(), columns = "categoria", distinctStatement = true)
         }
     }
 

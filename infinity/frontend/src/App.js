@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import HomeScreen from "./screens/Home/HomeScreen";
-import MetasScreen from './screens/Metas/MetasScreen';
-import AdicionarDespesasScreen from "./screens/AdicionarDespesas/AdicionarDespesasScreen";
+import HomeScreen from "./screens/home/HomeScreen";
+import MetasScreen from './screens/metas/MetasScreen';
+import AdicionarDespesasScreen from "./screens/adicionar_despesas/AdicionarDespesasScreen";
 import './App.css';
 
 const App = () => {

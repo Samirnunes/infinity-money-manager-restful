@@ -17,7 +17,7 @@ export const handleGetAllGastosUnicos = async (setResponse) => {
     }
 };
 
-export const handleInsertGastoUnico = async (insertData, setResponse) => {
+export const handleInsertGastoUnico = async (insertGastoUnicoData, setResponse) => {
     try {
         const response = await fetch('http://localhost:8080/api/v1/infinity/adicionar-despesas/insert-gasto-unico', {
             method: 'POST',
@@ -25,10 +25,10 @@ export const handleInsertGastoUnico = async (insertData, setResponse) => {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: new URLSearchParams({
-                valor: insertData.valor,
-                categoria: insertData.categoria,
-                descricao: insertData.descricao,
-                data: insertData.data,
+                valor: insertGastoUnicoData.valor,
+                categoria: insertGastoUnicoData.categoria,
+                descricao: insertGastoUnicoData.descricao,
+                data: insertGastoUnicoData.data,
             }),
         });
 
@@ -43,7 +43,7 @@ export const handleInsertGastoUnico = async (insertData, setResponse) => {
     }
 };
 
-export const handleDeleteGastoUnico = async (deleteData, setResponse) => {
+export const handleDeleteGastoUnico = async (deleteGastoUnicoData, setResponse) => {
     try {
         const response = await fetch('http://localhost:8080/api/v1/infinity/adicionar-despesas/delete-gasto-unico', {
             method: 'DELETE',
@@ -51,7 +51,7 @@ export const handleDeleteGastoUnico = async (deleteData, setResponse) => {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: new URLSearchParams({
-                id: deleteData.id
+                id: deleteGastoUnicoData.id
             }),
         });
 
