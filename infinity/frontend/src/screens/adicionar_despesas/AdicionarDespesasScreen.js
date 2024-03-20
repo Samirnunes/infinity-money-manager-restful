@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { InputInsertGastoUnico } from "./components/gasto_unico/InputInsertGastoUnico";
-import { InputDeleteGastoUnico } from "./components/gasto_unico/InputDeleteGastoUnico";
-import { InputInsertCategoria } from "./components/categoria/InputInsertCategoria";
-import { ListGastoUnico } from "./components/gasto_unico/ListGastoUnico";
-import { ListCategoria } from "./components/categoria/ListCategoria";
-import { InputDeleteCategoria } from "./components/categoria/InputDeleteCategoria";
+import React, {useState} from 'react';
+import {InputInsertGastoUnico} from "./components/gasto_unico/InputInsertGastoUnico";
+import {InputDeleteGastoUnico} from "./components/gasto_unico/InputDeleteGastoUnico";
+import {InputInsertCategoria} from "./components/categoria/InputInsertCategoria";
+import {ListGastoUnico} from "./components/gasto_unico/ListGastoUnico";
+import {ListCategoria} from "./components/categoria/ListCategoria";
+import {InputDeleteCategoria} from "./components/categoria/InputDeleteCategoria";
 import {ListGastoFixo} from "./components/gasto_fixo/ListGastoFixo";
 import {InputInsertGastoFixo} from "./components/gasto_fixo/InputInsertGastoFixo";
 import {InputDeleteGastoFixo} from "./components/gasto_fixo/InputDeleteGastoFixo";
