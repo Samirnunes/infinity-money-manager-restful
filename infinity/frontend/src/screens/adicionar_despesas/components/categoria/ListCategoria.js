@@ -1,4 +1,4 @@
-import {handleGetAllCategorias} from "../handles/CategoriasHandles";
+import {handleGetAllCategorias} from "../../handles/CategoriasHandles";
 import React from "react";
 
 
@@ -7,7 +7,11 @@ export function ListCategoria({setResponse}){
         <>
             <button
                 className="getAllCategoriasButton"
-                onClick={() => handleGetAllCategorias(setResponse)}>
+                onClick={() =>
+                    handleGetAllCategorias(
+                        setResponse
+                    )
+            }>
                 Listar categorias
             </button>
         </>

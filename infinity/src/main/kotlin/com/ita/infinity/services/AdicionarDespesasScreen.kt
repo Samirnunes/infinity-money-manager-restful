@@ -25,7 +25,6 @@ class AdicionarDespesasScreen {
         }
     }
 
-    // no front: if recorrência == "Único" -> usar addGastoVariavel
     fun insertGastoUnico(valor: Double = 0.0,
                         categoria: String = "Outros",
                         descricao: String = "",
@@ -124,10 +123,17 @@ class AdicionarDespesasScreen {
         }
     }
 
-    fun getAllCategorias(): MutableList<MutableMap<String, Any>>?{
-        dbConnector.use {
-            return it.select(Categoria(), columns = "categoria", distinctStatement = true)
+    fun getAllCategorias(): List<String> {
+        val rows = dbConnector.use {
+            it.select(Categoria(), columns = "categoria", distinctStatement = true)
         }
+        val categorias = mutableListOf<String>()
+        if (rows != null) {
+            for(row in rows){
+                categorias.add(row["categoria"].toString())
+            }
+        }
+        return categorias.sorted()
     }
 
     fun getCategoria(id: Int): MutableList<MutableMap<String, Any>>? {
@@ -144,23 +150,19 @@ class AdicionarDespesasScreen {
         }
     }
 
-    fun deleteCategoria(id: Int): String {
-        dbConnector.use{
-            return it.delete(
-                Categoria(id=id)
-            )
+    fun deleteCategoria(categoria: String) {
+        val rows = dbConnector.use{
+            it.select(Categoria(), whereCondition = "categoria = '$categoria'")
         }
-    }
-
-    fun modifyCategoria(id: Int, categoria: String): String {
-        deleteCategoria(id)
-        dbConnector.use{
-            return it.insert(
-                Categoria(
-                    id = id,
-                    categoria = categoria
-                )
-            )
+        if (rows != null) {
+            for(row in rows){
+                val id = row["id"] as Int
+                dbConnector.use{
+                    it.delete(
+                        Categoria(), whereCondition = "id = $id"
+                    )
+                }
+            }
         }
     }
 }

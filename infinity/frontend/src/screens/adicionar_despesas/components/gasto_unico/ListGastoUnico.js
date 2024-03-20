@@ -1,4 +1,4 @@
-import {handleGetAllGastosUnicos} from "../handles/GastoUnicoHandles";
+import {handleGetAllGastosUnicos} from "../../handles/GastoUnicoHandles";
 import React from "react";
 
 export function ListGastoUnico({setResponse}){
@@ -6,7 +6,11 @@ export function ListGastoUnico({setResponse}){
         <>
             <button
                 className="getAllGastosUnicosButton"
-                onClick={() => handleGetAllGastosUnicos(setResponse)}>
+                onClick={() =>
+                    handleGetAllGastosUnicos(
+                        setResponse
+                    )
+            }>
                 Listar gastos únicos
             </button>
         </>

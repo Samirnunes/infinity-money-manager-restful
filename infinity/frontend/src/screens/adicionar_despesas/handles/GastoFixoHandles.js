@@ -1,7 +1,7 @@
-export const handleGetAllGastosUnicos = async (setResponse) => {
+export const handleGetAllGastosFixos = async (setResponse) => {
     try {
         const response = await fetch(
-            'http://localhost:8080/api/v1/infinity/adicionar-despesas/get-all-gastos-unicos',
+            'http://localhost:8080/api/v1/infinity/adicionar-despesas/get-all-gastos-fixos',
             {
             method: 'GET',
             headers: {
@@ -19,20 +19,20 @@ export const handleGetAllGastosUnicos = async (setResponse) => {
     }
 };
 
-export const handleInsertGastoUnico = async (insertGastoUnicoData, setResponse) => {
+export const handleInsertGastoFixo = async (insertGastoFixoData, setResponse) => {
     try {
         const response = await fetch(
-            'http://localhost:8080/api/v1/infinity/adicionar-despesas/insert-gasto-unico',
+            'http://localhost:8080/api/v1/infinity/adicionar-despesas/insert-gasto-fixo',
             {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: new URLSearchParams({
-                valor: insertGastoUnicoData.valor,
-                categoria: insertGastoUnicoData.categoria,
-                descricao: insertGastoUnicoData.descricao,
-                data: insertGastoUnicoData.data,
+                valor: insertGastoFixoData.valor,
+                categoria: insertGastoFixoData.categoria,
+                descricao: insertGastoFixoData.descricao,
+                data: insertGastoFixoData.data,
             }),
         });
 
@@ -47,19 +47,19 @@ export const handleInsertGastoUnico = async (insertGastoUnicoData, setResponse) 
     }
 };
 
-export const handleDeleteGastoUnico = async (deleteGastoUnicoData, setResponse) => {
+export const handleDeleteGastoFixo = async (deleteGastoFixoData, setResponse) => {
     try {
         const response = await fetch(
-            'http://localhost:8080/api/v1/infinity/adicionar-despesas/delete-gasto-unico',
+            'http://localhost:8080/api/v1/infinity/adicionar-despesas/delete-gasto-fixo',
             {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-                id: deleteGastoUnicoData.id
-            }),
-        });
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    id: deleteGastoFixoData.id
+                }),
+            });
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);

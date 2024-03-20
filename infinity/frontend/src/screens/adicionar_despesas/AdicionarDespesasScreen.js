@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { InputInsertGastoUnico } from "./components/InputInsertGastoUnico";
-import { InputDeleteGastoUnico } from "./components/InputDeleteGastoUnico";
-import { InputInsertCategoria } from "./components/InputInsertCategoria";
-import { ListGastoUnico } from "./components/ListGastoUnico";
-import { ListCategoria } from "./components/ListCategoria";
+import { InputInsertGastoUnico } from "./components/gasto_unico/InputInsertGastoUnico";
+import { InputDeleteGastoUnico } from "./components/gasto_unico/InputDeleteGastoUnico";
+import { InputInsertCategoria } from "./components/categoria/InputInsertCategoria";
+import { ListGastoUnico } from "./components/gasto_unico/ListGastoUnico";
+import { ListCategoria } from "./components/categoria/ListCategoria";
+import { InputDeleteCategoria } from "./components/categoria/InputDeleteCategoria";
+import {ListGastoFixo} from "./components/gasto_fixo/ListGastoFixo";
+import {InputInsertGastoFixo} from "./components/gasto_fixo/InputInsertGastoFixo";
+import {InputDeleteGastoFixo} from "./components/gasto_fixo/InputDeleteGastoFixo";
 
 const AdicionarDespesasScreen = () => {
     const [response, setResponse] = useState('');
@@ -26,7 +30,24 @@ const AdicionarDespesasScreen = () => {
                     />
                 </div>
                 <div>
+                    <InputInsertGastoFixo
+                        setResponse={setResponse}
+                    />
+                    <br/>
+                    <InputDeleteGastoFixo
+                        setResponse={setResponse}
+                    />
+                    <br/>
+                    <ListGastoFixo
+                        setResponse={setResponse}
+                    />
+                </div>
+                <div>
                     <InputInsertCategoria
+                        setResponse={setResponse}
+                    />
+                    <br />
+                    <InputDeleteCategoria
                         setResponse={setResponse}
                     />
                     <br />

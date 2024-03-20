@@ -91,15 +91,8 @@ class AdicionarDespesasController {
     }
 
     @GetMapping("/get-all-categorias")
-    fun getAllCategorias(): MutableList<String> {
-        val rows = adicionarDespesasScreen.getAllCategorias()
-        val categorias = mutableListOf<String>()
-        if (rows != null) {
-            for(row in rows){
-                categorias.add(row["categoria"].toString())
-            }
-        }
-        return categorias
+    fun getAllCategorias(): List<String> {
+        return adicionarDespesasScreen.getAllCategorias()
     }
 
     @GetMapping("/get-categoria")
@@ -115,13 +108,7 @@ class AdicionarDespesasController {
     }
 
     @DeleteMapping("/delete-categoria")
-    fun deleteCategoriaButton(@RequestParam @NotNull id: Int){
-        adicionarDespesasScreen.deleteCategoria(id)
-    }
-
-    @PostMapping("/modify-categoria")
-    fun modifyCategoria(@RequestParam @NotNull id: Int,
-                        @RequestParam @NotNull categoria: String){
-        adicionarDespesasScreen.modifyCategoria(id, categoria)
+    fun deleteCategoriaButton(@RequestParam @NotNull categoria: String){
+        adicionarDespesasScreen.deleteCategoria(categoria)
     }
 }
