@@ -1,7 +1,7 @@
 import {handleGetAllGastosUnicos} from "../../handles/GastoUnicoHandles";
 import React from "react";
 
-export function ListGastoUnico({setResponse}){
+export function GetGastoUnico({setResponse}){
     return (
         <>
             <button

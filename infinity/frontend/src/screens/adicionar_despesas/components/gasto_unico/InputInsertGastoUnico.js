@@ -2,10 +2,10 @@ import React, {useState} from "react";
 import {handleChange} from "../../../ScreenUtils";
 import {handleInsertGastoUnico} from "../../handles/GastoUnicoHandles";
 
-export function InputInsertGastoUnico({setResponse}) {
+export function InputInsertGastoUnico({setResponse, categorias}) {
     const [insertGastoUnicoData, setInsertGastoUnicoData] = useState({
         valor: 0,
-        categoria: 'Outros',
+        categoria: '',
         descricao: '',
         data: new Date().toISOString().split('T')[0],
     });
@@ -29,17 +29,23 @@ export function InputInsertGastoUnico({setResponse}) {
             <br/>
             <label>
                 Categoria:
-                <input type="text"
-                       value={insertGastoUnicoData.categoria}
-                       onChange={(e) =>
-                           handleChange(
-                               'categoria',
-                               e.target.value,
-                               insertGastoUnicoData,
-                               setInsertGastoUnicoData
-                           )
-                }
-                />
+                <select
+                    value={insertGastoUnicoData.categoria}
+                    onChange={(e) =>
+                        handleChange(
+                            "categoria",
+                            e.target.value,
+                            insertGastoUnicoData,
+                            setInsertGastoUnicoData
+                        )
+                    }
+                >
+                    {categorias.map((categoria) => (
+                        <option key={categoria} value={categoria}>
+                            {categoria}
+                        </option>
+                    ))}
+                </select>
             </label>
             <br/>
             <label>

@@ -2,7 +2,7 @@ import {handleGetAllCategorias} from "../../handles/CategoriasHandles";
 import React from "react";
 
 
-export function ListCategoria({setResponse}){
+export function GetCategoria({setResponse}){
     return (
         <>
             <button

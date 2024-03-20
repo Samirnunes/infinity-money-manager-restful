@@ -2,11 +2,11 @@ import React, {useState} from "react";
 import {handleChange} from "../../../ScreenUtils";
 import {handleInsertGastoFixo} from "../../handles/GastoFixoHandles";
 
-export function InputInsertGastoFixo({setResponse}) {
+export function InputInsertGastoFixo({setResponse, categorias}) {
     const [insertGastoFixoData, setInsertGastoFixoData] = useState({
         valor: 0,
         periodicidade: 'Mensal',
-        categoria: 'Outros',
+        categoria: '',
         descricao: '',
         data: new Date().toISOString().split('T')[0],
     });
@@ -45,17 +45,23 @@ export function InputInsertGastoFixo({setResponse}) {
             <br/>
             <label>
                 Categoria:
-                <input type="text"
-                       value={insertGastoFixoData.categoria}
-                       onChange={(e) =>
-                           handleChange(
-                               'categoria',
-                               e.target.value,
-                               insertGastoFixoData,
-                               setInsertGastoFixoData
-                           )
-                       }
-                />
+                <select
+                    value={insertGastoFixoData.categoria}
+                    onChange={(e) =>
+                        handleChange(
+                            "categoria",
+                            e.target.value,
+                            insertGastoFixoData,
+                            setInsertGastoFixoData
+                        )
+                    }
+                >
+                    {categorias.map((categoria) => (
+                        <option key={categoria} value={categoria}>
+                            {categoria}
+                        </option>
+                    ))}
+                </select>
             </label>
             <br/>
             <label>

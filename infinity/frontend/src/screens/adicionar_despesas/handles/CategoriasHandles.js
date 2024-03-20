@@ -1,18 +1,30 @@
-export const handleGetAllCategorias = async (setResponse) => {
+export const updateCategoriaList = async (setUpdateCategorias) => {
     try {
-        const response = await fetch(
-            'http://localhost:8080/api/v1/infinity/adicionar-despesas/get-all-categorias',
-            {
+        const categoriasList = await fetchAllCategorias();
+        setUpdateCategorias(categoriasList);
+    } catch (error) {
+        console.error("Erro ao atualizar as categorias:", error);
+    }
+}
+
+export const fetchAllCategorias = async() => {
+    const response = await fetch(
+        'http://localhost:8080/api/v1/infinity/adicionar-despesas/get-all-categorias',
+        {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
         });
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return await response.json();
+}
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const result = await response.json();
+export const handleGetAllCategorias = async (setResponse) => {
+    try {
+        const result = await fetchAllCategorias();
         setResponse(JSON.stringify(result, null, 2));
     } catch (error) {
         console.error('Error:', error.message);

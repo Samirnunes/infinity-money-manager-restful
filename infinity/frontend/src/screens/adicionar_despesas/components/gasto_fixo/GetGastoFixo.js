@@ -1,7 +1,7 @@
 import React from "react";
 import {handleGetAllGastosFixos} from "../../handles/GastoFixoHandles";
 
-export function ListGastoFixo({setResponse}){
+export function GetGastoFixo({setResponse}){
     return (
         <>
             <button

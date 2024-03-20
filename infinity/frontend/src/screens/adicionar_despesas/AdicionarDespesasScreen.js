@@ -1,16 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {InputInsertGastoUnico} from "./components/gasto_unico/InputInsertGastoUnico";
 import {InputDeleteGastoUnico} from "./components/gasto_unico/InputDeleteGastoUnico";
 import {InputInsertCategoria} from "./components/categoria/InputInsertCategoria";
-import {ListGastoUnico} from "./components/gasto_unico/ListGastoUnico";
-import {ListCategoria} from "./components/categoria/ListCategoria";
+import {GetGastoUnico} from "./components/gasto_unico/GetGastoUnico";
+import {GetCategoria} from "./components/categoria/GetCategoria";
 import {InputDeleteCategoria} from "./components/categoria/InputDeleteCategoria";
-import {ListGastoFixo} from "./components/gasto_fixo/ListGastoFixo";
+import {GetGastoFixo} from "./components/gasto_fixo/GetGastoFixo";
 import {InputInsertGastoFixo} from "./components/gasto_fixo/InputInsertGastoFixo";
 import {InputDeleteGastoFixo} from "./components/gasto_fixo/InputDeleteGastoFixo";
+import {updateCategoriaList} from "./handles/CategoriasHandles";
 
 const AdicionarDespesasScreen = () => {
     const [response, setResponse] = useState('');
+    const [categorias, setUpdateCategorias] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            await updateCategoriaList(setUpdateCategorias);
+        };
+        fetchData().then(r => {});
+    }, []);
 
     return (
         <div style={{ textAlign: 'center' }}>
@@ -19,39 +27,42 @@ const AdicionarDespesasScreen = () => {
                 <div style={{ marginRight: '20px' }}>
                     <InputInsertGastoUnico
                         setResponse={setResponse}
+                        categorias={categorias}
                     />
                     <br />
                     <InputDeleteGastoUnico
                         setResponse={setResponse}
                     />
                     <br />
-                    <ListGastoUnico
+                    <GetGastoUnico
                         setResponse={setResponse}
                     />
                 </div>
                 <div>
                     <InputInsertGastoFixo
                         setResponse={setResponse}
+                        categorias={categorias}
                     />
                     <br/>
                     <InputDeleteGastoFixo
                         setResponse={setResponse}
                     />
                     <br/>
-                    <ListGastoFixo
+                    <GetGastoFixo
                         setResponse={setResponse}
                     />
                 </div>
                 <div>
                     <InputInsertCategoria
                         setResponse={setResponse}
+                        setUpdateCategorias={setUpdateCategorias}
                     />
                     <br />
                     <InputDeleteCategoria
                         setResponse={setResponse}
                     />
                     <br />
-                    <ListCategoria
+                    <GetCategoria
                         setResponse={setResponse}
                     />
                 </div>

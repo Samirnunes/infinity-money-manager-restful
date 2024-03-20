@@ -1,9 +1,8 @@
 import {handleChange} from "../../../ScreenUtils";
-import {handleInsertCategoria} from "../../handles/CategoriasHandles";
+import {handleInsertCategoria, updateCategoriaList} from "../../handles/CategoriasHandles";
 import React, {useState} from "react";
 
-
-export function InputInsertCategoria({setResponse}){
+export function InputInsertCategoria({setResponse, setUpdateCategorias}){
     const [insertCategoriaData, setInsertCategoriaData] = useState({
         categoria: 'Outros',
     });
@@ -31,7 +30,8 @@ export function InputInsertCategoria({setResponse}){
                     handleInsertCategoria(
                         insertCategoriaData,
                         setResponse
-                    )
+                    ).then(() =>
+                        updateCategoriaList(setUpdateCategorias))
             }>
                 Adicionar nova categoria
             </button>
