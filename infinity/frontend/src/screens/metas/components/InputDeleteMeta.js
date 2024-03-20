@@ -25,8 +25,6 @@ export function InputDeleteMeta({setResponse}){
                        }
                 />
             </label>
-            <br/>
-            <br/>
             <button
                 className="deleteGastoUnicoButton"
                 onClick={() =>
