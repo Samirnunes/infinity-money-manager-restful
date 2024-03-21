@@ -2,7 +2,7 @@ import {handleGetAllMetas} from "../handles/MetasHandles";
 import React from "react";
 
 
-export function ListMeta({setResponse}){
+export function GetMeta({setResponse}){
     return (
         <>
             <button

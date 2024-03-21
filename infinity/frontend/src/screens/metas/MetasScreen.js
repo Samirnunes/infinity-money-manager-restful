@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {InputInsertMeta} from "./components/InputInsertMeta";
 import {InputDeleteMeta} from "./components/InputDeleteMeta";
-import {ListMeta} from "./components/ListMeta";
+import {GetMeta} from "./components/GetMeta";
 
 const MetasScreen = () => {
     const [response, setResponse] = useState('');
@@ -19,7 +19,7 @@ const MetasScreen = () => {
                     setResponse={setResponse}
                 />
                 <br/>
-                <ListMeta
+                <GetMeta
                     setResponse={setResponse}
                 />
                 </div>
