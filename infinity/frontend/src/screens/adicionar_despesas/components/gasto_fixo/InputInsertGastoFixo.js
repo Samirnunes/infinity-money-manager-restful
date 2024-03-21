@@ -35,15 +35,15 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
             <label>
                 Periodicidade:
                 <select
-                   value={insertGastoFixoData.periodicidade}
-                   onChange={(e) =>
-                       handleChange(
-                           'periodicidade',
-                           e.target.value,
-                           insertGastoFixoData,
-                           setInsertGastoFixoData
-                       )
-                   }
+                    value={insertGastoFixoData.periodicidade}
+                    onChange={(e) =>
+                        handleChange(
+                            'periodicidade',
+                            e.target.value,
+                            insertGastoFixoData,
+                            setInsertGastoFixoData
+                        )
+                    }
                 >
                     {periodicidades.map((periodicidade) => (
                         <option key={periodicidade} value={periodicidade}>

@@ -24,21 +24,23 @@ const AdicionarDespesasScreen = () => {
         <div style={{ textAlign: 'center' }}>
             <h1>Adicionar Despesas</h1>
             <div style={{ display: 'flex', justifyContent: 'space-evenly', textAlign: 'left' }}>
-                <div style={{ marginRight: '20px' }}>
+                <div style={{marginRight: '20px'}}>
+                    <h2>Gastos Únicos</h2>
                     <InputInsertGastoUnico
                         setResponse={setResponse}
                         categorias={categorias}
                     />
-                    <br />
+                    <br/>
                     <InputDeleteGastoUnico
                         setResponse={setResponse}
                     />
-                    <br />
+                    <br/>
                     <GetGastoUnico
                         setResponse={setResponse}
                     />
                 </div>
                 <div>
+                    <h2>Gastos Fixos</h2>
                     <InputInsertGastoFixo
                         setResponse={setResponse}
                         categorias={categorias}
@@ -53,15 +55,16 @@ const AdicionarDespesasScreen = () => {
                     />
                 </div>
                 <div>
+                    <h2>Categorias</h2>
                     <InputInsertCategoria
                         setResponse={setResponse}
                         setUpdateCategorias={setUpdateCategorias}
                     />
-                    <br />
+                    <br/>
                     <InputDeleteCategoria
                         setResponse={setResponse}
                     />
-                    <br />
+                    <br/>
                     <GetCategoria
                         setResponse={setResponse}
                     />

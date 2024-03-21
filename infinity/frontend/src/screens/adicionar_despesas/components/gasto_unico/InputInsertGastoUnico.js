@@ -23,7 +23,7 @@ export function InputInsertGastoUnico({setResponse, categorias}) {
                                insertGastoUnicoData,
                                setInsertGastoUnicoData
                            )
-                }
+                       }
                 />
             </label>
             <br/>
@@ -59,7 +59,7 @@ export function InputInsertGastoUnico({setResponse, categorias}) {
                                insertGastoUnicoData,
                                setInsertGastoUnicoData
                            )
-                }
+                       }
                 />
             </label>
             <br/>
@@ -74,7 +74,7 @@ export function InputInsertGastoUnico({setResponse, categorias}) {
                                insertGastoUnicoData,
                                setInsertGastoUnicoData
                            )
-                }
+                       }
                 />
             </label>
             <br/>
@@ -85,7 +85,7 @@ export function InputInsertGastoUnico({setResponse, categorias}) {
                         insertGastoUnicoData,
                         setResponse
                     )
-            }>
+                }>
                 Adicionar gasto único
             </button>
         </>
