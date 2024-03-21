@@ -5,11 +5,15 @@ import {handleInsertGastoFixo} from "../../handles/GastoFixoHandles";
 export function InputInsertGastoFixo({setResponse, categorias}) {
     const [insertGastoFixoData, setInsertGastoFixoData] = useState({
         valor: 0,
-        periodicidade: 'Mensal',
+        periodicidade: '',
         categoria: '',
         descricao: '',
         data: new Date().toISOString().split('T')[0],
     });
+
+    const periodicidades = [
+        "Diária", "Semanal", "Mensal", "Bimestral", "Trimestral", "Semestral", "Anual"
+    ]
 
     return (
         <>
@@ -30,17 +34,23 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
             <br/>
             <label>
                 Periodicidade:
-                <input type="text"
-                       value={insertGastoFixoData.periodicidade}
-                       onChange={(e) =>
-                           handleChange(
-                               'periodicidade',
-                               e.target.value,
-                               insertGastoFixoData,
-                               setInsertGastoFixoData
-                           )
-                       }
-                />
+                <select
+                   value={insertGastoFixoData.periodicidade}
+                   onChange={(e) =>
+                       handleChange(
+                           'periodicidade',
+                           e.target.value,
+                           insertGastoFixoData,
+                           setInsertGastoFixoData
+                       )
+                   }
+                >
+                    {periodicidades.map((periodicidade) => (
+                        <option key={periodicidade} value={periodicidade}>
+                            {periodicidade}
+                        </option>
+                    ))}
+                </select>
             </label>
             <br/>
             <label>

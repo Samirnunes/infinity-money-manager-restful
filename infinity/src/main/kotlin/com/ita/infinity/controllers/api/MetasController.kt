@@ -42,7 +42,7 @@ class MetasController {
                          @RequestParam @NotNull nome: String,
                          @RequestParam @NotNull valorAlvo: Double = 0.0,
                          @RequestParam @NotNull valorArrecadado: Double = 0.0,
-                         @RequestParam @NotNull prazo: Date = Date.valueOf(LocalDate.now())): String {
-        return metasScreen.modifyMeta(id, nome, valorAlvo, valorArrecadado, prazo)
+                         @RequestParam @NotNull prazo: Date = Date.valueOf(LocalDate.now())) {
+        metasScreen.modifyMeta(id, nome, valorAlvo, valorArrecadado, prazo)
     }
 }

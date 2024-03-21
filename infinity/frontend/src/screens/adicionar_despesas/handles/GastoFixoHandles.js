@@ -29,6 +29,7 @@ export const handleInsertGastoFixo = async (insertGastoFixoData, setResponse) =>
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: new URLSearchParams({
+                periodicidade: insertGastoFixoData.periodicidade,
                 valor: insertGastoFixoData.valor,
                 categoria: insertGastoFixoData.categoria,
                 descricao: insertGastoFixoData.descricao,

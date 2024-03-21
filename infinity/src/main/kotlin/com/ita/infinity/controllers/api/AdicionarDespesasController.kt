@@ -71,13 +71,13 @@ class AdicionarDespesasController {
                               @RequestParam @NotNull valor: Double = 0.0,
                               @RequestParam @NotNull categoria: String = "Outros",
                               @RequestParam @NotNull descricao: String = "",
-                              @RequestParam @NotNull data: Date =  Date.valueOf(LocalDate.now())){
-        adicionarDespesasScreen.insertGastoFixo(periodicidade, valor, categoria, descricao, data)
+                              @RequestParam @NotNull data: Date =  Date.valueOf(LocalDate.now())): String {
+        return adicionarDespesasScreen.insertGastoFixo(periodicidade, valor, categoria, descricao, data)
     }
 
     @DeleteMapping("/delete-gasto-fixo")
-    fun deleteGastoFixoButton(@RequestParam @NotNull id: Int){
-        adicionarDespesasScreen.deleteGastoFixo(id)
+    fun deleteGastoFixoButton(@RequestParam @NotNull id: Int): String {
+        return adicionarDespesasScreen.deleteGastoFixo(id)
     }
 
     @PostMapping("/modify-gasto-fixo")
@@ -103,8 +103,8 @@ class AdicionarDespesasController {
     }
 
     @PostMapping("/insert-categoria")
-    fun insertCategoriaButton(@RequestParam @NotNull categoria: String){
-        adicionarDespesasScreen.insertCategoria(categoria)
+    fun insertCategoriaButton(@RequestParam @NotNull categoria: String): String {
+        return adicionarDespesasScreen.insertCategoria(categoria)
     }
 
     @DeleteMapping("/delete-categoria")
