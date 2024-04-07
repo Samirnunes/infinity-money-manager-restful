@@ -6,7 +6,7 @@ export function GetCategoria({setResponse}){
     return (
         <>
             <button
-                className="getAllCategoriasButton"
+                className="button"
                 onClick={() =>
                     handleGetAllCategorias(
                         setResponse

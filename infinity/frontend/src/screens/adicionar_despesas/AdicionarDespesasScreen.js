@@ -9,6 +9,9 @@ import {GetGastoFixo} from "./components/gasto_fixo/GetGastoFixo";
 import {InputInsertGastoFixo} from "./components/gasto_fixo/InputInsertGastoFixo";
 import {InputDeleteGastoFixo} from "./components/gasto_fixo/InputDeleteGastoFixo";
 import {updateCategoriaList} from "./handles/CategoriasHandles";
+import {InputInsertMeta} from "../metas/components/InputInsertMeta";
+import {InputDeleteMeta} from "../metas/components/InputDeleteMeta";
+import {GetMeta} from "../metas/components/GetMeta";
 
 const AdicionarDespesasScreen = () => {
     const [response, setResponse] = useState('');
@@ -25,52 +28,70 @@ const AdicionarDespesasScreen = () => {
             <h1>Adicionar Despesas</h1>
             <div style={{ display: 'flex', justifyContent: 'space-evenly', textAlign: 'left' }}>
                 <div style={{marginRight: '20px'}}>
-                    <h2>Gastos Únicos</h2>
-                    <InputInsertGastoUnico
-                        setResponse={setResponse}
-                        categorias={categorias}
-                    />
-                    <br/>
-                    <InputDeleteGastoUnico
-                        setResponse={setResponse}
-                    />
-                    <br/>
-                    <GetGastoUnico
-                        setResponse={setResponse}
-                    />
+                    <ul className="list-group">
+                        <h2>Gastos Únicos</h2>
+                        <li className="list-item-larger">
+                            <InputInsertGastoUnico
+                                setResponse={setResponse}
+                                categorias={categorias}
+                            />
+                        </li>
+                        <li className="list-item-larger">
+                            <InputDeleteGastoUnico
+                                setResponse={setResponse}
+                            />
+                        </li>
+                        <li className="list-item-larger">
+                            <GetGastoUnico
+                                setResponse={setResponse}
+                            />
+                        </li>
+                    </ul>
                 </div>
                 <div>
-                    <h2>Gastos Fixos</h2>
-                    <InputInsertGastoFixo
-                        setResponse={setResponse}
-                        categorias={categorias}
-                    />
-                    <br/>
-                    <InputDeleteGastoFixo
-                        setResponse={setResponse}
-                    />
-                    <br/>
-                    <GetGastoFixo
-                        setResponse={setResponse}
-                    />
+                    <ul className="list-group">
+                        <h2>Gastos Fixos</h2>
+                        <li className="list-item-larger">
+                            <InputInsertGastoFixo
+                                setResponse={setResponse}
+                                categorias={categorias}
+                            />
+                        </li>
+                        <li className="list-item-larger">
+                            <InputDeleteGastoFixo
+                                setResponse={setResponse}
+                            />
+                        </li>
+                        <li className="list-item-larger">
+                            <GetGastoFixo
+                                setResponse={setResponse}
+                            />
+                        </li>
+                    </ul>
                 </div>
                 <div>
-                    <h2>Categorias</h2>
-                    <InputInsertCategoria
-                        setResponse={setResponse}
-                        setUpdateCategorias={setUpdateCategorias}
-                    />
-                    <br/>
-                    <InputDeleteCategoria
-                        setResponse={setResponse}
-                    />
-                    <br/>
-                    <GetCategoria
-                        setResponse={setResponse}
-                    />
+                    <ul className="list-group">
+                        <h2>Categorias</h2>
+                        <li className="list-item-larger">
+                            <InputInsertCategoria
+                                setResponse={setResponse}
+                                setUpdateCategorias={setUpdateCategorias}
+                            />
+                        </li>
+                        <li className="list-item-larger">
+                            <InputDeleteCategoria
+                                setResponse={setResponse}
+                            />
+                        </li>
+                        <li className="list-item-larger">
+                            <GetCategoria
+                                setResponse={setResponse}
+                            />
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div style={{ display: 'flex', textAlign: 'left', justifyContent: 'center' }}>
+            <div style={{display: 'flex', textAlign: 'left', justifyContent: 'center'}}>
                 <pre>{response}</pre>
             </div>
         </div>

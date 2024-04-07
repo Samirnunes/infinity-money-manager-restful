@@ -11,7 +11,7 @@ export function InputDeleteCategoria({setResponse}){
     return (
         <>
             <label>
-                Categoria a excluir:
+                <span>Categoria a excluir:</span>
                 <input type="text"
                        value={deleteCategoriaData.categoria}
                        onChange={(e) =>
@@ -26,7 +26,7 @@ export function InputDeleteCategoria({setResponse}){
             </label>
             < br/>
             <button
-                className="deleteCategoriaButton"
+                className="button"
                 onClick={() =>
                     handleDeleteCategoria(
                         deleteCategoriaData,

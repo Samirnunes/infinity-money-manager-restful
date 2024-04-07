@@ -10,7 +10,7 @@ export function InputDeleteGastoFixo({setResponse}){
     return (
         <>
             <label>
-                Excluir ID:
+                <span>Excluir ID:</span>
                 <input type="number"
                        value={deleteGastoFixoData.id}
                        onChange={(e) =>
@@ -25,7 +25,7 @@ export function InputDeleteGastoFixo({setResponse}){
             </label>
             < br/>
             <button
-                className="deleteGastoFixoButton"
+                className="button"
                 onClick={() =>
                     handleDeleteGastoFixo(
                         deleteGastoFixoData,

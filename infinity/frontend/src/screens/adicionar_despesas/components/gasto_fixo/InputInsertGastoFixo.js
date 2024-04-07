@@ -18,7 +18,7 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
     return (
         <>
             <label>
-                Valor:
+                <span>Valor:</span>
                 <input type="number"
                        value={insertGastoFixoData.valor}
                        onChange={(e) =>
@@ -33,8 +33,9 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
             </label>
             <br/>
             <label>
-                Periodicidade:
+                <span>Periodicidade:</span>
                 <select
+                    className="droplist"
                     value={insertGastoFixoData.periodicidade}
                     onChange={(e) =>
                         handleChange(
@@ -54,8 +55,9 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
             </label>
             <br/>
             <label>
-                Categoria:
+                <span>Categoria:</span>
                 <select
+                    className="droplist"
                     value={insertGastoFixoData.categoria}
                     onChange={(e) =>
                         handleChange(
@@ -75,7 +77,7 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
             </label>
             <br/>
             <label>
-                Descrição:
+                <span>Descrição:</span>
                 <input type="text"
                        value={insertGastoFixoData.descricao}
                        onChange={(e) =>
@@ -90,7 +92,7 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
             </label>
             <br/>
             <label>
-                Data:
+                <span>Data:</span>
                 <input type="date"
                        value={insertGastoFixoData.data}
                        onChange={(e) =>
@@ -105,7 +107,7 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
             </label>
             <br/>
             <button
-                className="insertGastoFixoButton"
+                className="button"
                 onClick={() =>
                     handleInsertGastoFixo(
                         insertGastoFixoData,

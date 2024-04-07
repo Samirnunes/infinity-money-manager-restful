@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {handleChange} from "../../ScreenUtils";
 import {handleInsertMeta} from "../handles/MetasHandles";
-
+import '../../../App.css'
 
 export function InputInsertMeta({setResponse}){
     const [insertData, setInsertData] = useState({
@@ -13,8 +13,8 @@ export function InputInsertMeta({setResponse}){
 
     return (
         <>
-            <label>
-                Nome:
+            <label style={{ marginRight: '10px' }}>
+                <span>Nome:</span>
                 <input type="text"
                        value={insertData.nome}
                        onChange={(e) =>
@@ -29,7 +29,7 @@ export function InputInsertMeta({setResponse}){
             </label>
             <br/>
             <label>
-                Valor Alvo:
+                <span>Valor Alvo:</span>
                 <input type="number"
                        value={insertData.valorAlvo}
                        onChange={(e) =>
@@ -44,7 +44,7 @@ export function InputInsertMeta({setResponse}){
             </label>
             <br/>
             <label>
-                Valor Arrecadado:
+                <span>Valor Arrecadado:</span>
                 <input type="number"
                        value={insertData.valorArrecadado}
                        onChange={(e) =>
@@ -59,7 +59,7 @@ export function InputInsertMeta({setResponse}){
             </label>
             <br/>
             <label>
-                Prazo:
+                <span>Prazo:</span>
                 <input type="date"
                        value={insertData.prazo}
                        onChange={(e) =>
@@ -74,7 +74,7 @@ export function InputInsertMeta({setResponse}){
             </label>
             <br/>
             <button
-                className="insertGastoUnicoButton"
+                className="button"
                 onClick={() =>
                     handleInsertMeta(
                         insertData,

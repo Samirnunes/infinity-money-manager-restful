@@ -10,7 +10,7 @@ export function InputDeleteGastoUnico({setResponse}){
     return (
         <>
             <label>
-                Excluir ID:
+                <span>Excluir ID:</span>
                 <input type="number"
                        value={deleteGastoUnicoData.id}
                        onChange={(e) =>
@@ -25,7 +25,7 @@ export function InputDeleteGastoUnico({setResponse}){
             </label>
             < br/>
             <button
-                className="deleteGastoUnicoButton"
+                className="button"
                 onClick={() =>
                     handleDeleteGastoUnico(
                         deleteGastoUnicoData,

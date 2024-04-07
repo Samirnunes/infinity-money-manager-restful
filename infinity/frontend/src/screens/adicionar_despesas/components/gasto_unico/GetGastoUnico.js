@@ -5,7 +5,7 @@ export function GetGastoUnico({setResponse}){
     return (
         <>
             <button
-                className="getAllGastosUnicosButton"
+                className="button"
                 onClick={() =>
                     handleGetAllGastosUnicos(
                         setResponse
