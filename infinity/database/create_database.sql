@@ -116,6 +116,21 @@ CREATE TABLE `infinity`.`categorias` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+INSERT INTO `infinity`.`metas` (`id`, `nome`, `valor_alvo`, `valor_arrecadado`, `prazo`)
+VALUES (1, 'Nenhuma', 0, 0, NULL);
+
+DELIMITER $$
+CREATE TRIGGER prevent_delete_default_meta
+BEFORE DELETE ON `infinity`.`metas`
+FOR EACH ROW
+BEGIN
+    IF OLD.id = 1 THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Cannot delete the default meta record.';
+    END IF;
+END$$
+DELIMITER ;
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
