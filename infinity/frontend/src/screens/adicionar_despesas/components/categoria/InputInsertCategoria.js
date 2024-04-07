@@ -10,7 +10,7 @@ export function InputInsertCategoria({setResponse, setUpdateCategorias}){
     return (
         <>
             <label>
-                Nova categoria:
+                <span>Nova categoria:</span>
                 <input type="text"
                        value={insertCategoriaData.categoria}
                        onChange={(e) =>
@@ -25,7 +25,7 @@ export function InputInsertCategoria({setResponse, setUpdateCategorias}){
             </label>
             <br/>
             <button
-                className="insertCategoriaButton"
+                className="button"
                 onClick={() =>
                     handleInsertCategoria(
                         insertCategoriaData,

@@ -5,7 +5,7 @@ export function GetGastoFixo({setResponse}){
     return (
         <>
             <button
-                className="getAllGastosFixosButton"
+                className="button"
                 onClick={() =>
                     handleGetAllGastosFixos(
                         setResponse

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Routes } from 'react-router-dom';
 import HomeScreen from "./screens/home/HomeScreen";
 import MetasScreen from './screens/metas/MetasScreen';
 import AdicionarDespesasScreen from "./screens/adicionar_despesas/AdicionarDespesasScreen";
@@ -9,15 +9,21 @@ const App = () => {
         <Router>
             <div>
                 <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
+                    <ul className="list-group">
+                        <li className="list-item">
+                            <NavLink exact to="/" activeClassName="active" className="button">
+                                Home
+                            </NavLink>
                         </li>
-                        <li>
-                            <Link to="/metas">Metas</Link>
+                        <li className="list-item">
+                            <NavLink exact to="/metas" activeClassName="active" className="button">
+                                Metas
+                            </NavLink>
                         </li>
-                        <li>
-                            <Link to="/adicionar-despesas">Adicionar Despesas</Link>
+                        <li className="list-item">
+                            <NavLink exact to="/adicionar-despesas" activeClassName="active" className="button">
+                                Adicionar Despesas
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>

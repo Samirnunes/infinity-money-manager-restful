@@ -2,32 +2,37 @@ import React, {useState} from 'react';
 import {InputInsertMeta} from "./components/InputInsertMeta";
 import {InputDeleteMeta} from "./components/InputDeleteMeta";
 import {GetMeta} from "./components/GetMeta";
+import {NavLink} from "react-router-dom";
 
 const MetasScreen = () => {
     const [response, setResponse] = useState('');
 
     return (
         <div style={{textAlign: 'center'}}>
-            <h1 style={{color: 'black'}}>Metas</h1>
+            <h1>Metas</h1>
             <div style={{display: 'flex', justifyContent: 'space-evenly', textAlign: 'left'}}>
-                <div style={{ marginRight: '20px' }}>
-                <InputInsertMeta
-                    setResponse={setResponse}
-                />
-                <br/>
-                <InputDeleteMeta
-                    setResponse={setResponse}
-                />
-                <br/>
-                <GetMeta
-                    setResponse={setResponse}
-                />
-                </div>
+                <ul className="list-group">
+                    <li className="list-item-larger">
+                        <InputInsertMeta
+                            setResponse={setResponse}
+                        />
+                    </li>
+                    <li className="list-item-larger">
+                        <InputDeleteMeta
+                            setResponse={setResponse}
+                        />
+                    </li>
+                    <li className="list-item-larger">
+                        <GetMeta
+                            setResponse={setResponse}
+                        />
+                    </li>
+                </ul>
             </div>
-            <div style={{display: 'flex', textAlign: 'left', justifyContent: 'center' }}>
-                    <pre>{response}</pre>
-                </div>
+            <div style={{display: 'flex', textAlign: 'left', justifyContent: 'center'}}>
+                <pre>{response}</pre>
             </div>
+        </div>
     );
 };
 

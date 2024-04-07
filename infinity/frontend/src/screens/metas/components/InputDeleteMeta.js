@@ -1,7 +1,7 @@
 import {handleChange} from "../../ScreenUtils";
 import {handleDeleteMeta} from "../handles/MetasHandles";
 import React, {useState} from "react";
-
+import '../../../App.css'
 
 export function InputDeleteMeta({setResponse}){
 
@@ -12,7 +12,7 @@ export function InputDeleteMeta({setResponse}){
     return (
         <>
             <label>
-                Excluir ID:
+                <span>Excluir ID:</span>
                 <input type="number"
                        value={deleteData.id}
                        onChange={(e) =>
@@ -25,8 +25,9 @@ export function InputDeleteMeta({setResponse}){
                        }
                 />
             </label>
+            <br/>
             <button
-                className="deleteGastoUnicoButton"
+                className="button"
                 onClick={() =>
                     handleDeleteMeta(
                         deleteData,

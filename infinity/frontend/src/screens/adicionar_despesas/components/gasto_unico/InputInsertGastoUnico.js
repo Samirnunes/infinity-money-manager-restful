@@ -13,7 +13,7 @@ export function InputInsertGastoUnico({setResponse, categorias}) {
     return (
         <>
             <label>
-                Valor:
+                <span>Valor:</span>
                 <input type="number"
                        value={insertGastoUnicoData.valor}
                        onChange={(e) =>
@@ -28,8 +28,9 @@ export function InputInsertGastoUnico({setResponse, categorias}) {
             </label>
             <br/>
             <label>
-                Categoria:
+                <span>Categoria:</span>
                 <select
+                    className="droplist"
                     value={insertGastoUnicoData.categoria}
                     onChange={(e) =>
                         handleChange(
@@ -49,7 +50,7 @@ export function InputInsertGastoUnico({setResponse, categorias}) {
             </label>
             <br/>
             <label>
-                Descrição:
+                <span>Descrição:</span>
                 <input type="text"
                        value={insertGastoUnicoData.descricao}
                        onChange={(e) =>
@@ -64,7 +65,7 @@ export function InputInsertGastoUnico({setResponse, categorias}) {
             </label>
             <br/>
             <label>
-                Data:
+                <span>Data:</span>
                 <input type="date"
                        value={insertGastoUnicoData.data}
                        onChange={(e) =>
@@ -79,7 +80,7 @@ export function InputInsertGastoUnico({setResponse, categorias}) {
             </label>
             <br/>
             <button
-                className="insertGastoUnicoButton"
+                className="button"
                 onClick={() =>
                     handleInsertGastoUnico(
                         insertGastoUnicoData,
