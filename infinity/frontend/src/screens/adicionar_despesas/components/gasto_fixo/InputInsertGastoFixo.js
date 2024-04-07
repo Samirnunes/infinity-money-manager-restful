@@ -5,7 +5,7 @@ import {handleInsertGastoFixo} from "../../handles/GastoFixoHandles";
 export function InputInsertGastoFixo({setResponse, categorias}) {
     const [insertGastoFixoData, setInsertGastoFixoData] = useState({
         valor: 0,
-        periodicidade: '',
+        periodicidade: 'Diária',
         categoria: 'Nenhuma',
         descricao: '',
         data: new Date().toISOString().split('T')[0],
