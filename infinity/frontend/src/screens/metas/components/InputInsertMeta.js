@@ -21,8 +21,8 @@ export function InputInsertMeta({setResponse}){
                            handleChange(
                                'nome',
                                e.target.value,
-                               setInsertData,
-                               insertData
+                               insertData,
+                               setInsertData
                            )
                        }
                 />
@@ -36,8 +36,8 @@ export function InputInsertMeta({setResponse}){
                            handleChange(
                                'valorAlvo',
                                e.target.value,
-                               setInsertData,
-                               insertData
+                               insertData,
+                               setInsertData
                            )
                        }
                 />
@@ -51,8 +51,8 @@ export function InputInsertMeta({setResponse}){
                            handleChange(
                                'valorArrecadado',
                                e.target.value,
-                               setInsertData,
-                               insertData
+                               insertData,
+                               setInsertData
                            )
                        }
                 />
@@ -66,8 +66,8 @@ export function InputInsertMeta({setResponse}){
                            handleChange(
                                'prazo',
                                e.target.value,
-                               setInsertData,
-                               insertData
+                               insertData,
+                               setInsertData
                            )
                        }
                 />
