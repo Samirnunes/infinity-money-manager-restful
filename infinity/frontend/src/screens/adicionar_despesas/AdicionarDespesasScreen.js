@@ -12,7 +12,7 @@ import {updateCategoriaList} from "./handles/CategoriasHandles";
 
 const AdicionarDespesasScreen = () => {
     const [response, setResponse] = useState('');
-    const [categorias, setUpdateCategorias] = useState([]);
+    const [categorias, setUpdateCategorias] = useState(['Nenhuma']);
     useEffect(() => {
         const fetchData = async () => {
             await updateCategoriaList(setUpdateCategorias);
