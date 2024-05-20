@@ -75,15 +75,33 @@ const TransactionList = () => {
         });
     }, [gastosFixosData, gastosUnicosData]);
 
+    const groupedGastos = gastosUnicosData.reduce((groups, gasto) => {
+        const date = gasto.data;
+        if (!groups[date]) {
+            groups[date] = [];
+        }
+        groups[date].push(gasto);
+        return groups;
+    }, {});
+
+    const sortedDates = Object.keys(groupedGastos).sort((a, b) => new Date(b) - new Date(a));
+
     return (
         <div>
-            {gastosUnicosData.map((gasto) => (
-                <TransactionCard
-                    key={gasto.id}
-                    tipo={gasto.categoria || "Sem Categoria"}
-                    descricao={gasto.descricao}
-                    valor={gasto.valor}
-                />
+            {sortedDates.map(date => (
+                <div key={date}>
+                    <h2>{date}</h2>
+                    {groupedGastos[date].map((gasto, index, array) => (
+                        <React.Fragment key={gasto.id}>
+                            <TransactionCard
+                                tipo={gasto.categoria || "Sem Categoria"}
+                                descricao={gasto.descricao}
+                                valor={gasto.valor}
+                            />
+                        </React.Fragment>
+                    ))}
+                    <hr/>
+                </div>
             ))}
         </div>
     );

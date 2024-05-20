@@ -11,7 +11,7 @@ const TransactionCard = ({tipo, descricao, valor}) => {
                     <p className="subtext">{descricao}</p>
                 </div>
             </div>
-            <p className="text">{valor}</p>
+            <p className="text">R$ {valor}</p>
         </section>
     );
 };

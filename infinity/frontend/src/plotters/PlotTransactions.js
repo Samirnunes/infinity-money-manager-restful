@@ -109,8 +109,8 @@ const TransactionsChart = ({style}) => {
             labels: dates,
             datasets: [{
                 label: 'Valor (reais)',
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                data: values
+                backgroundColor: "#A9A9A9",
+                data: values,
             }]
         };
 

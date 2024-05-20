@@ -22,20 +22,12 @@ const HomeScreen = () => {
             <div style={{ display: 'flex', justifyContent: 'space-evenly', textAlign: 'left' }}>
                 <div style={{marginRight: '20px'}}>
                     <ul className="list-group">
-                        <h2>Receitas</h2>
+                        <h2>Despesas</h2>
                         <li className="list-item-larger">
                             <TransactionsChart style={{width: '400px', height: '200px'}}/>
                         </li>
                         <li className="list-item-larger">
                             <TransactionList/>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul className="list-group">
-                        <h2>Despesas</h2>
-                        <li className="list-item-larger">
-                            <TransactionsChart style={{width: '400px', height: '200px'}}/>
                         </li>
                     </ul>
                 </div>
