@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 import {handlePlotGastosUnicos} from "./handles/PlotHandles";
 import {handlePlotGastosFixos} from "./handles/PlotHandles";
 
-const TransactionsChart = () => {
+const TransactionsChart = ({style}) => {
         const [gastosUnicosData, setGastosUnicosData] = useState([]);
         const [gastosFixosData, setGastosFixosData] = useState([]);
 
@@ -150,7 +150,7 @@ const TransactionsChart = () => {
 
     return (
         <div>
-            <canvas ref={chartRef}></canvas>
+            <canvas ref={chartRef} style={style}></canvas>
         </div>
     );
 };

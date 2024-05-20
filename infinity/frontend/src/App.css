@@ -118,8 +118,39 @@ h2 {
   text-decoration: none;
 }
 
-.plot{
-  width: 1000px;
-  margin: 0 auto;
+.transaction_card {
+  width: 400px;
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.text {
+  font: bold 20px Montserrat;
+  color: #183A4E;
+  margin: 0;
+  text-decoration: none;
+}
+
+.subtext {
+  font: bold 10px Montserrat;
+  color: #A9A9A9;
+  margin: 2px 0 0;
+  text-decoration: none;
+}
+
+.transaction_info {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.icon {
+  color: #183A4E;
+  font-size: 32px;
+  padding: 2px 16px 2px 2px;
+}
+
+
 

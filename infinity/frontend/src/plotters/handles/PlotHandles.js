@@ -11,7 +11,7 @@ export const handlePlotMetas = async (setResponse) => {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const result = await response.json();
-        setResponse(JSON.parse(JSON.stringify(result, null, 2)));
+        setResponse(result);
     } catch (error) {
         console.error('Error:', error.message);
     }
@@ -32,7 +32,7 @@ export const handlePlotGastosUnicos = async (setResponse) => {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const result = await response.json();
-        setResponse(JSON.parse(JSON.stringify(result, null, 2)));
+        setResponse(result);
     } catch (error) {
         console.error('Error:', error.message);
     }
@@ -53,7 +53,7 @@ export const handlePlotGastosFixos = async (setResponse) => {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const result = await response.json();
-        setResponse(JSON.parse(JSON.stringify(result, null, 2)));
+        setResponse(result);
     } catch (error) {
         console.error('Error:', error.message);
     }
