@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {InputInsertGastoUnico} from "./components/gasto_unico/InputInsertGastoUnico";
+import {InputModifyGastoUnico} from "./components/gasto_unico/InputModifyGastoUnico";
 import {InputDeleteGastoUnico} from "./components/gasto_unico/InputDeleteGastoUnico";
 import {InputInsertCategoria} from "./components/categoria/InputInsertCategoria";
 import {GetGastoUnico} from "./components/gasto_unico/GetGastoUnico";
@@ -7,6 +8,7 @@ import {GetCategoria} from "./components/categoria/GetCategoria";
 import {InputDeleteCategoria} from "./components/categoria/InputDeleteCategoria";
 import {GetGastoFixo} from "./components/gasto_fixo/GetGastoFixo";
 import {InputInsertGastoFixo} from "./components/gasto_fixo/InputInsertGastoFixo";
+import {InputModifyGastoFixo} from "./components/gasto_fixo/InputModifyGastoFixo";
 import {InputDeleteGastoFixo} from "./components/gasto_fixo/InputDeleteGastoFixo";
 import {updateCategoriaList} from "./handles/CategoriasHandles";
 import {InputInsertMeta} from "../metas/components/InputInsertMeta";
@@ -37,6 +39,12 @@ const AdicionarDespesasScreen = () => {
                             />
                         </li>
                         <li className="list-item-larger">
+                            <InputModifyGastoUnico
+                                setResponse={setResponse}
+                                categorias={categorias}
+                            />
+                        </li>
+                        <li className="list-item-larger">
                             <InputDeleteGastoUnico
                                 setResponse={setResponse}
                             />
@@ -53,6 +61,12 @@ const AdicionarDespesasScreen = () => {
                         <h2>Gastos Fixos</h2>
                         <li className="list-item-larger">
                             <InputInsertGastoFixo
+                                setResponse={setResponse}
+                                categorias={categorias}
+                            />
+                        </li>
+                        <li className="list-item-larger">
+                            <InputModifyGastoFixo
                                 setResponse={setResponse}
                                 categorias={categorias}
                             />

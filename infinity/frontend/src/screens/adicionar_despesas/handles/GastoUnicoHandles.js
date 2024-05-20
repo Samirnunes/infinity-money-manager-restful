@@ -47,6 +47,35 @@ export const handleInsertGastoUnico = async (insertGastoUnicoData, setResponse) 
     }
 };
 
+export const handleModifyGastoUnico = async (modifyGastoUnicoData, setResponse) => {
+    try {
+        const response = await fetch(
+            'http://localhost:8080/api/v1/infinity/adicionar-despesas/modify-gasto-unico',
+            {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                id: modifyGastoUnicoData.id,
+                valor: modifyGastoUnicoData.valor,
+                categoria: modifyGastoUnicoData.categoria,
+                descricao: modifyGastoUnicoData.descricao,
+                data: modifyGastoUnicoData.data,
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const responseBody = await response.text();
+        setResponse(responseBody)
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+};
+
 export const handleDeleteGastoUnico = async (deleteGastoUnicoData, setResponse) => {
     try {
         const response = await fetch(

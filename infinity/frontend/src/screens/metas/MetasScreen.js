@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {InputInsertMeta} from "./components/InputInsertMeta";
 import {InputDeleteMeta} from "./components/InputDeleteMeta";
+import {InputModifyMeta} from "./components/InputModifyMeta";
 import {GetMeta} from "./components/GetMeta";
 import {NavLink} from "react-router-dom";
 
@@ -19,6 +20,11 @@ const MetasScreen = () => {
                     </li>
                     <li className="list-item-larger">
                         <InputDeleteMeta
+                            setResponse={setResponse}
+                        />
+                    </li>
+                    <li className="list-item-larger">
+                        <InputModifyMeta
                             setResponse={setResponse}
                         />
                     </li>

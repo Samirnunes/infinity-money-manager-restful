@@ -66,3 +66,30 @@ export const handleDeleteMeta= async (deleteData, setResponse) => {
         console.error('Error:', error.message);
     }
 };
+
+export const handleModifyMeta = async (modifyData, setResponse) => {
+    try {
+        const response = await fetch('http://localhost:8080/api/v1/infinity/metas/modify-meta', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                id: modifyData.id,
+                nome: modifyData.nome,
+                valorAlvo: modifyData.valorAlvo,
+                valorArrecadado: modifyData.valorArrecadado,
+                prazo: modifyData.prazo,
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const responseBody = await response.text();
+        setResponse(responseBody)
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+};

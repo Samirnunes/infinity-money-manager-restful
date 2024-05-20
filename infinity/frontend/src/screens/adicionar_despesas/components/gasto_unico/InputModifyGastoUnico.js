@@ -1,70 +1,59 @@
 import React, {useState} from "react";
 import {handleChange} from "../../../ScreenUtils";
-import {handleInsertGastoFixo} from "../../handles/GastoFixoHandles";
+import {handleModifyGastoUnico} from "../../handles/GastoUnicoHandles";
 
-export function InputInsertGastoFixo({setResponse, categorias}) {
-    const [insertGastoFixoData, setInsertGastoFixoData] = useState({
+export function InputModifyGastoUnico({setResponse, categorias}) {
+    const [modifyGastoUnicoData, setModifyGastoUnicoData] = useState({
+        id: 0,
         valor: 0,
-        periodicidade: 'Diária',
         categoria: categorias[0],
         descricao: '',
         data: new Date().toISOString().split('T')[0],
     });
 
-    const periodicidades = [
-        "Diária", "Semanal", "Mensal", "Bimestral", "Trimestral", "Semestral", "Anual"
-    ]
-
     return (
         <>
             <label>
-                <span>Valor:</span>
+                <span>ID:</span>
                 <input type="number"
-                       value={insertGastoFixoData.valor}
+                       value={modifyGastoUnicoData.id}
                        onChange={(e) =>
                            handleChange(
-                               'valor',
+                               'id',
                                e.target.value,
-                               insertGastoFixoData,
-                               setInsertGastoFixoData
+                               modifyGastoUnicoData,
+                               setModifyGastoUnicoData
                            )
                        }
                 />
             </label>
             <br/>
             <label>
-                <span>Periodicidade:</span>
-                <select
-                    className="droplist"
-                    value={insertGastoFixoData.periodicidade}
-                    onChange={(e) =>
-                        handleChange(
-                            'periodicidade',
-                            e.target.value,
-                            insertGastoFixoData,
-                            setInsertGastoFixoData
-                        )
-                    }
-                >
-                    {periodicidades.map((periodicidade) => (
-                        <option key={periodicidade} value={periodicidade}>
-                            {periodicidade}
-                        </option>
-                    ))}
-                </select>
+                <span>Valor:</span>
+                <input type="number"
+                       value={modifyGastoUnicoData.valor}
+                       onChange={(e) =>
+                           handleChange(
+                               'valor',
+                               e.target.value,
+                               modifyGastoUnicoData,
+                               setModifyGastoUnicoData
+                           )
+                       }
+                />
             </label>
             <br/>
             <label>
                 <span>Categoria:</span>
                 <select
                     className="droplist"
-                    value={insertGastoFixoData.categoria}
+                    value={modifyGastoUnicoData.categoria}
                     onChange={(e) =>
                         handleChange(
                             "categoria",
                             e.target.value,
-                            insertGastoFixoData,
-                            setInsertGastoFixoData
+                            modifyGastoUnicoData,
+                            setModifyGastoUnicoData
                         )
                     }
                 >
@@ -79,13 +68,13 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
             <label>
                 <span>Descrição:</span>
                 <input type="text"
-                       value={insertGastoFixoData.descricao}
+                       value={modifyGastoUnicoData.descricao}
                        onChange={(e) =>
                            handleChange(
                                'descricao',
                                e.target.value,
-                               insertGastoFixoData,
-                               setInsertGastoFixoData
+                               modifyGastoUnicoData,
+                               setModifyGastoUnicoData
                            )
                        }
                 />
@@ -94,13 +83,13 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
             <label>
                 <span>Data:</span>
                 <input type="date"
-                       value={insertGastoFixoData.data}
+                       value={modifyGastoUnicoData.data}
                        onChange={(e) =>
                            handleChange(
                                'data',
                                e.target.value,
-                               insertGastoFixoData,
-                               setInsertGastoFixoData
+                               modifyGastoUnicoData,
+                               setModifyGastoUnicoData
                            )
                        }
                 />
@@ -109,12 +98,12 @@ export function InputInsertGastoFixo({setResponse, categorias}) {
             <button
                 className="button"
                 onClick={() =>
-                    handleInsertGastoFixo(
-                        insertGastoFixoData,
+                    handleModifyGastoUnico(
+                        modifyGastoUnicoData,
                         setResponse
                     )
                 }>
-                Adicionar gasto fixo
+                Modificar gasto único
             </button>
         </>
     )

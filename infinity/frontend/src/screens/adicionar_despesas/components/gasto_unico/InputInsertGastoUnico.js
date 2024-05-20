@@ -5,7 +5,7 @@ import {handleInsertGastoUnico} from "../../handles/GastoUnicoHandles";
 export function InputInsertGastoUnico({setResponse, categorias}) {
     const [insertGastoUnicoData, setInsertGastoUnicoData] = useState({
         valor: 0,
-        categoria: 'Nenhuma',
+        categoria: categorias[0],
         descricao: '',
         data: new Date().toISOString().split('T')[0],
     });
