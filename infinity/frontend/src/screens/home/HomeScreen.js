@@ -12,6 +12,7 @@ import {InputInsertCategoria} from "../adicionar_despesas/components/categoria/I
 import {InputDeleteCategoria} from "../adicionar_despesas/components/categoria/InputDeleteCategoria";
 import {GetCategoria} from "../adicionar_despesas/components/categoria/GetCategoria";
 import TransactionList from "./Components/TransactionList";
+import TransactionView from "./Components/TransactionView";
 
 const HomeScreen = () => {
     const [toPrint, setToPrint] = useState('');
@@ -19,15 +20,26 @@ const HomeScreen = () => {
 
     return(
         <div style={{ textAlign: 'center' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-evenly', textAlign: 'left' }}>
+            <div style={{display: 'flex', justifyContent: 'space-evenly', textAlign: 'left'}}>
+                <div style={{marginRight: '20px'}}>
+                    <ul className="list-group">
+                        <h2>Receitas</h2>
+                        <li className="list-item-larger">
+                            <TransactionsChart className='chart' style={{width: '400px', height: '200px'}}/>
+                        </li>
+                        <li className="list-item-larger">
+                            <TransactionView/>
+                        </li>
+                    </ul>
+                </div>
                 <div style={{marginRight: '20px'}}>
                     <ul className="list-group">
                         <h2>Despesas</h2>
                         <li className="list-item-larger">
-                            <TransactionsChart style={{width: '400px', height: '200px'}}/>
+                            <TransactionsChart className='chart' style={{width: '400px', height: '200px'}}/>
                         </li>
                         <li className="list-item-larger">
-                            <TransactionList/>
+                            <TransactionView/>
                         </li>
                     </ul>
                 </div>

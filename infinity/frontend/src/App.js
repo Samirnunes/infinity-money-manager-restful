@@ -39,6 +39,10 @@ const App = () => {
                     <Route
                         path="/adicionar-despesas"
                         element={<AdicionarDespesasScreen />} />
+                    <Route
+                        path="/teste"
+                        element={<HomeScreen />}
+                    />
                 </Routes>
             </div>
         </Router>

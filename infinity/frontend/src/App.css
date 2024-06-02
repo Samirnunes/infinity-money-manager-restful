@@ -76,6 +76,7 @@
 .droplist {
   font: 12px Montserrat;
   text-decoration: none;
+  background-color: #00000000;
   color: #000000;
   padding: 6px 10px 6px 10px;
   border-bottom: 1px solid #000000;
@@ -93,6 +94,7 @@ label {
 input {
   font: 12px Montserrat;
   color: #000000;
+  background-color: #00000000;
   width: 200px; /* Set width of the input */
   padding: 6px;
   border-bottom: 1px solid #000000;
@@ -118,38 +120,12 @@ h2 {
   text-decoration: none;
 }
 
-.transaction_card {
-  width: 400px;
-  height: 30px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .text {
   font: bold 20px Montserrat;
   color: #183A4E;
   margin: 0;
   text-decoration: none;
-}
-
-.subtext {
-  font: bold 10px Montserrat;
-  color: #A9A9A9;
-  margin: 2px 0 0;
-  text-decoration: none;
-}
-
-.transaction_info {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.icon {
-  color: #183A4E;
-  font-size: 32px;
-  padding: 2px 16px 2px 2px;
 }
 
 

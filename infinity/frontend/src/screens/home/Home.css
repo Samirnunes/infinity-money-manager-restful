@@ -1,0 +1,102 @@
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.parent-btn-modal {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-modal {
+    width: 100px;
+    height: 30px;
+    background-color: #EEEEEE;
+    padding: 6px 10px 6px 10px;
+    border-radius: 30px;
+    border: 1px solid #183A4E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: #183A4EDD;
+}
+.modal-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #EEEEEE;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    color: white;
+    font-size: 32px
+}
+
+.filter-list {
+    list-style-type: none;
+    margin: 10px 10px 10px 10px;
+}
+
+.filter-icon {
+    color: #183A4E;
+    font-size: 36px;
+}
+
+.transaction_card {
+    width: 400px;
+    height: 30px;
+    padding: 0 0 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-subtext {
+    font: bold 10px Montserrat;
+    color: #A9A9A9;
+    margin: 2px 0 0;
+    text-decoration: none;
+}
+
+.transaction_info {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.card-icon {
+    color: #183A4E;
+    font-size: 32px;
+    padding: 2px 16px 2px 2px;
+}
+
+.apply-filter {
+    display: flex;
+    margin: 50px 0 0 0;
+    justify-content: center;
+}
+
+.chart {
+    border-radius: 10px;
+}

@@ -2,15 +2,17 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FaCartShopping } from "react-icons/fa6";
 import {handlePlotGastosFixos, handlePlotGastosUnicos} from "../../../plotters/handles/PlotHandles";
 import TransactionCard from "./TransactionCard";
+import {handleGetFilteredGastosFixos, handleGetFilteredGastosUnicos} from "../HomeHandles";
 
-const TransactionList = () => {
+const TransactionList = ({ filterData }) => {
     const [gastosUnicosData, setGastosUnicosData] = useState([]);
     const [gastosFixosData, setGastosFixosData] = useState([]);
 
-    function addFixedTransactions(fixedTransaction, uniqueTransactions) {
+    function addFixedTransactions(fixedTransaction, uniqueTransactions, filterDate) {
         const today = new Date();
         const referenceDate = new Date(fixedTransaction.data);
-        const newDate = new Date(referenceDate); // Copiando a data do gasto
+        const filterDateObj = new Date(filterDate);
+        const newDate = new Date(Math.max(referenceDate.getTime(), filterDateObj.getTime())); // Copiando a data do gasto
 
         while (newDate <= today) {
             // Append transaction to list
@@ -57,9 +59,9 @@ const TransactionList = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                await handlePlotGastosUnicos(setGastosUnicosData);
+                await handleGetFilteredGastosUnicos(filterData, setGastosUnicosData);
                 console.log('Gastos Unicos Data:', gastosUnicosData);
-                await handlePlotGastosFixos(setGastosFixosData);
+                await handleGetFilteredGastosFixos(filterData, setGastosFixosData);
                 console.log('Gastos Fixos Data:', gastosFixosData);
             } catch (error) {
                 console.error('Error:', error.message);
@@ -67,13 +69,13 @@ const TransactionList = () => {
         };
 
         fetchData();
-    }, []);
+    }, [filterData]);
 
     useEffect(() => {
         gastosFixosData.forEach(function(gasto) {
-            addFixedTransactions(gasto, gastosUnicosData);
+            addFixedTransactions(gasto, gastosUnicosData, filterData.dataFiltro);
         });
-    }, [gastosFixosData, gastosUnicosData]);
+    }, [gastosFixosData, gastosUnicosData, filterData]);
 
     const groupedGastos = gastosUnicosData.reduce((groups, gasto) => {
         const date = gasto.data;
@@ -90,6 +92,7 @@ const TransactionList = () => {
         <div>
             {sortedDates.map(date => (
                 <div key={date}>
+                    <hr/>
                     <h2>{date}</h2>
                     {groupedGastos[date].map((gasto, index, array) => (
                         <React.Fragment key={gasto.id}>
@@ -100,7 +103,6 @@ const TransactionList = () => {
                             />
                         </React.Fragment>
                     ))}
-                    <hr/>
                 </div>
             ))}
         </div>

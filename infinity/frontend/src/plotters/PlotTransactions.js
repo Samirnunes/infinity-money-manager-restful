@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 import {handlePlotGastosUnicos} from "./handles/PlotHandles";
 import {handlePlotGastosFixos} from "./handles/PlotHandles";
 
-const TransactionsChart = ({style}) => {
+const TransactionsChart = ({ className, style }) => {
         const [gastosUnicosData, setGastosUnicosData] = useState([]);
         const [gastosFixosData, setGastosFixosData] = useState([]);
 
@@ -79,7 +79,9 @@ const TransactionsChart = ({style}) => {
         });
     }, [gastosFixosData, gastosUnicosData]);
 
-    const groupedGastosUnicos = gastosUnicosData.reduce(function(acc, obj) {
+    const sortedData = gastosUnicosData.slice().sort((a, b) => new Date(a.data) - new Date(b.data));
+
+    const groupedGastosUnicos = sortedData.reduce(function(acc, obj) {
         const date = new Date(obj.data);
         const monthNames = ['Janeiro', 'Fevereiro', 'Março',
             'Abril', 'Maio', 'Junho', 'Julho', 'Agosto',
@@ -114,6 +116,19 @@ const TransactionsChart = ({style}) => {
             }]
         };
 
+        const plugin = {
+            id: 'customCanvasBackgroundColor',
+            beforeDraw: (chart, args, options) => {
+                const {ctx} = chart;
+                ctx.save();
+                ctx.globalCompositeOperation = 'destination-over';
+                ctx.fillStyle = options.color || '#183A4E';
+                ctx.fillRect(0, 0, chart.width, chart.height);
+                ctx.restore();
+            }
+        };
+        Chart.defaults.color = "#FFFFFF";
+
         chartInstance.current = new Chart(ctx, {
             type: 'bar',
             data: data,
@@ -122,13 +137,19 @@ const TransactionsChart = ({style}) => {
                     x: {
                         scaleLabel: {
                             display: true,
-                            labelString: 'Mês'
-                        }
+                            labelString: 'Mês',
+                        },
+                        grid: {
+                            display: false
+                        },
                     },
                     y: {
                         scaleLabel: {
                             display: true,
-                            labelString: 'Soma do Valor'
+                            labelString: 'Soma do Valor',
+                        },
+                        grid: {
+                            color: '#A4A4A433'
                         }
                     }
                 },
@@ -136,9 +157,10 @@ const TransactionsChart = ({style}) => {
                     legend: {
                         display: true,
                         position: 'bottom'
-                    }
+                    },
                 }
-            }
+            },
+            plugins: [plugin],
         });
 
         return () => {
@@ -150,7 +172,7 @@ const TransactionsChart = ({style}) => {
 
     return (
         <div>
-            <canvas ref={chartRef} style={style}></canvas>
+            <canvas className={className} ref={chartRef} style={style}></canvas>
         </div>
     );
 };
